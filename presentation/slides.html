@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[DECK TITLE HERE]</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ==========================================================================
+           GLOBAL PRESENTATION DECK THEME
+           ========================================================================== */
+        :root {
+            --bg-dark-blue: #0A1128;
+            --accent-orange: #FF6B35;
+            --text-white: #FFFFFF;
+            --card-blue: #14213D;
+            --border-blue: #3B5480;
+            --dim-blue: #3B5480;
+            --text-dim: #F1F5F9;
+            --badge-green: #10B981;
+            --glass-bg: rgba(10, 17, 40, 0.7);
+            --glass-border: rgba(35, 57, 91, 0.4);
+        }
+
+        /* ==========================================================================
+           COLOR THEMES (Global Filters)
+           ========================================================================== */
+        body.theme-emerald {
+            filter: hue-rotate(90deg) saturate(1.1);
+        }
+
+        body.theme-cyberpunk {
+            filter: hue-rotate(240deg) saturate(1.5) contrast(1.1);
+        }
+
+        body.theme-monochrome {
+            filter: grayscale(100%) contrast(1.15) brightness(1.1);
+        }
+
+        body.theme-ruby {
+            filter: hue-rotate(320deg) saturate(1.2);
+        }
+
+        body.theme-light-corporate {
+            filter: invert(1) hue-rotate(180deg) saturate(1.2);
+        }
+
+        body.theme-light-warm {
+            filter: invert(1) saturate(1.2);
+        }
+
+        body.theme-light-mint {
+            filter: invert(1) hue-rotate(90deg) saturate(1.1);
+        }
+
+        body.theme-light-lavender {
+            filter: invert(1) hue-rotate(240deg) saturate(1.1);
+        }
+
+        body.theme-light-monochrome {
+            filter: invert(1) grayscale(100%) contrast(1.1) brightness(0.9);
+        }
+
+        /* Anti-filter for raw images/videos so people don't turn green or inverted */
+        body.theme-emerald img,
+        body.theme-emerald video {
+            filter: hue-rotate(-90deg) saturate(0.9);
+        }
+
+        body.theme-cyberpunk img,
+        body.theme-cyberpunk video {
+            filter: hue-rotate(-240deg) saturate(0.66) contrast(0.9);
+        }
+
+        body.theme-monochrome img,
+        body.theme-monochrome video {
+            filter: grayscale(0);
+        }
+
+        body.theme-ruby img,
+        body.theme-ruby video {
+            filter: hue-rotate(-320deg) saturate(0.83);
+        }
+
+        body.theme-light-corporate img,
+        body.theme-light-corporate video {
+            filter: hue-rotate(-180deg) invert(1);
+        }
+
+        body.theme-light-warm img,
+        body.theme-light-warm video {
+            filter: invert(1);
+        }
+
+        body.theme-light-mint img,
+        body.theme-light-mint video {
+            filter: hue-rotate(-90deg) invert(1);
+        }
+
+        body.theme-light-lavender img,
+        body.theme-light-lavender video {
+            filter: hue-rotate(-240deg) invert(1);
+        }
+
+        body.theme-light-monochrome img,
+        body.theme-light-monochrome video {
+            filter: grayscale(0) invert(1);
+        }
+
+        /* Theme Picker UI */
+        .theme-picker {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            background: rgba(10, 17, 40, 0.6);
+            padding: 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: opacity 0.3s ease;
+        }
+
+        /* Hide in export mode */
+        body.export-mode .theme-picker {
+            display: none !important;
+        }
+
+        .theme-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.25);
+        }
+
+        .theme-btn.active {
+            border-color: #FFF;
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-default {
+            background: linear-gradient(135deg, #FF6B35, #0A1128);
+        }
+
+        .btn-emerald {
+            background: linear-gradient(135deg, #10B981, #064E3B);
+        }
+
+        .btn-cyberpunk {
+            background: linear-gradient(135deg, #D946EF, #3B0764);
+        }
+
+        .btn-monochrome {
+            background: linear-gradient(135deg, #FFFFFF, #1e293b);
+        }
+
+        .btn-ruby {
+            background: linear-gradient(135deg, #E11D48, #4C0519);
+        }
+
+        .btn-light-corporate {
+            background: linear-gradient(135deg, #CA3600, #D7EEF5);
+            border: 1px solid #F1F5F9;
+        }
+
+        .btn-light-warm {
+            background: linear-gradient(135deg, #0094CA, #F5EED7);
+            border: 1px solid #D6D3D1;
+        }
+
+        .btn-light-mint {
+            background: linear-gradient(135deg, #6B21A8, #D1FAE5);
+            border: 1px solid #A7F3D0;
+        }
+
+        .btn-light-lavender {
+            background: linear-gradient(135deg, #854D0E, #E0E7FF);
+            border: 1px solid #C7D2FE;
+        }
+
+        .btn-light-monochrome {
+            background: linear-gradient(135deg, #000000, #F8FAFC);
+            border: 1px solid #E2E8F0;
+        }
+
+        .highlight-orange {
+            color: var(--accent-orange) !important;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #050814;
+            color: var(--text-white);
+            font-family: 'Public Sans', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            user-select: none;
+        }
+
+        /* Ambient animated backdrops */
+        .presentation-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .presentation-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
+                radial-gradient(white, rgba(255, 255, 255, .05) 1px, transparent 20px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ==========================================================================
+           SLIDES VIEWPORT (ASPECT RATIO 16:9 PRESERVING CONTAINER)
+           ========================================================================== */
+        .slides-viewport {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides-scaler {
+            width: 1280px;
+            height: 720px;
+            transform-origin: center center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slides-track {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+        }
+
+        /* ==========================================================================
+           SLIDE ELEMENT DEFINITIONS & ANIMATIONS
+           ========================================================================== */
+        .slide {
+            width: 1280px;
+            height: 720px;
+            background-color: var(--bg-dark-blue);
+            color: var(--text-white);
+            padding: 60px 80px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.98);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.6s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+        }
+
+        /* Entrance / Exit transition states */
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 5;
+            transform: translateY(0) scale(1);
+        }
+
+        .slide.prev-slide {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.98);
+            z-index: 1;
+        }
+
+        /* Global internal components of slide */
+        .slide h1.main-title {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            line-height: 1.2;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .slide h1.main-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 360px;
+            height: 6px;
+            background-color: var(--accent-orange);
+            border-radius: 3px;
+        }
+
+        .slide .tagline {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .slide .example-box {
+            background-color: rgba(255, 107, 53, 0.07);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin-top: auto;
+            transition: all 0.3s ease;
+        }
+
+        .slide .example-box:hover {
+            background-color: rgba(255, 107, 53, 0.12);
+            border-color: var(--accent-orange);
+        }
+
+        .slide .example-label {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .slide .example-text {
+            font-size: 15.5px;
+            font-style: italic;
+            color: var(--text-white);
+            line-height: 1.4;
+        }
+
+        .slide ul.bullet-list {
+            list-style: none;
+        }
+
+        .slide ul.bullet-list li {
+            font-size: 21px;
+            line-height: 1.55;
+            margin-bottom: 14px;
+            position: relative;
+            padding-left: 28px;
+            color: #E2E8F0;
+        }
+
+        .slide ul.bullet-list li strong {
+            color: var(--text-white);
+        }
+
+        .slide ul.bullet-list li::before {
+            content: '\f0da';
+            /* FontAwesome arrow */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-size: 18px;
+        }
+
+        .slide .system-outcome-box {
+            background-color: rgba(20, 33, 61, 0.5);
+            border-left: 6px solid var(--accent-orange);
+            padding: 22px 30px;
+            border-radius: 0 12px 12px 0;
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            border-right: 1px solid rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .slide .outcome-label {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-orange);
+            margin-bottom: 6px;
+        }
+
+        .slide .outcome-text {
+            font-size: 23px;
+            font-weight: 600;
+            line-height: 1.45;
+            color: #E2E8F0;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            top: -150px;
+            right: -150px;
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            bottom: -150px;
+            left: -150px;
+        }
+
+        .slide .content-wrapper {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* ==========================================================================
+           EXPORT MODE & PRINT STYLES FOR PNG/PDF CONVERTERS
+           ========================================================================== */
+        /* 1. URL Query Parameter Mode (?export) */
+        body.export-mode {
+            overflow: hidden !important;
+            background-color: #050814 !important;
+        }
+
+        body.export-mode .slides-viewport {
+            padding: 0 !important;
+            margin: 0 !important;
+            width: 1280px !important;
+            height: 720px !important;
+            overflow: hidden !important;
+        }
+
+        body.export-mode .slides-scaler {
+            transform: none !important;
+            width: 1280px !important;
+            height: 720px !important;
+        }
+
+        body.export-mode .slides-track {
+            width: 1280px !important;
+            height: 720px !important;
+        }
+
+        body.export-mode .slide {
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+
+        /* 2. Print stylesheet emulator (@media print) */
+        @media print {
+            body {
+                overflow: visible !important;
+                height: auto !important;
+                background-color: #050814 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .slides-viewport {
+                padding: 0 !important;
+                overflow: visible !important;
+                display: block !important;
+            }
+
+            .slides-scaler {
+                transform: none !important;
+                width: 100% !important;
+                height: auto !important;
+                display: block !important;
+            }
+
+            .slides-track {
+                width: 100% !important;
+                height: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0 !important;
+            }
+
+            .slide {
+                position: relative !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                display: flex !important;
+                width: 1280px !important;
+                height: 720px !important;
+                page-break-after: always !important;
+                break-after: page !important;
+                margin: 0 auto !important;
+                box-shadow: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+            }
+        }
+
+        .loading-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 720px;
+            gap: 20px;
+            color: #F1F5F9;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .loading-state i {
+            font-size: 40px;
+            color: var(--accent-orange);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="presentation-container">
+        <!-- PRESENTATION VIEWPORT (PIXEL PERFECT ASPECT SCALER) -->
+        <main class="slides-viewport">
+            <div class="slides-scaler">
+                <div class="slides-track">
+                    <!-- Slides are loaded dynamically via JavaScript from the slides/ folder -->
+                    <div class="loading-state">
+                        <i class="fa-solid fa-circle-notch fa-spin"></i>
+                        <span>Loading slides...</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- THEME PICKER UI -->
+    <div class="theme-picker">
+        <div class="theme-btn btn-default active" data-theme="theme-default" title="Midnight Orange"></div>
+        <div class="theme-btn btn-emerald" data-theme="theme-emerald" title="Emerald Forest"></div>
+        <div class="theme-btn btn-cyberpunk" data-theme="theme-cyberpunk" title="Cyberpunk Neon"></div>
+        <div class="theme-btn btn-monochrome" data-theme="theme-monochrome" title="Monochrome Slate"></div>
+    </div>
+
+    <!-- HIGH END PRESENTATION ENGINE INTERACTIVE LOGIC -->
+    <script>
+        // Multi-channel check for export parameters (search, hash, and href) to support strict browsers like Brave on file:// URIs
+        if (window.location.search.includes('export') ||
+            window.location.hash.includes('export') ||
+            window.location.href.includes('export')) {
+            document.body.classList.add('export-mode');
+        }
+
+        // ==========================================
+        // THEME ENGINE
+        // ==========================================
+        const themeBtns = document.querySelectorAll('.theme-btn');
+        const savedTheme = localStorage.getItem('presentation-theme') || 'theme-default';
+
+        function applyTheme(themeName) {
+            // Remove existing theme classes
+            document.body.classList.remove(
+                'theme-emerald', 'theme-cyberpunk', 'theme-monochrome', 'theme-ruby',
+                'theme-light-corporate', 'theme-light-warm', 'theme-light-mint',
+                'theme-light-lavender', 'theme-light-monochrome'
+            );
+            if (themeName !== 'theme-default') {
+                document.body.classList.add(themeName);
+            }
+
+            // Update active state on buttons
+            themeBtns.forEach(btn => {
+                if (btn.dataset.theme === themeName) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            localStorage.setItem('presentation-theme', themeName);
+        }
+
+        // Apply saved theme immediately on load
+        applyTheme(savedTheme);
+
+        // Add click listeners to theme buttons
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                applyTheme(btn.dataset.theme);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // ============================================================
+            // SLIDE MANIFEST — Add your slide files here in order
+            // ============================================================
+            const slideSources = [
+                'slides/00_title.html',
+                'slides/01_cover.html',
+                'slides/02_blank.html',
+            ];
+            const track = document.querySelector('.slides-track');
+            // Load all slides dynamically
+            Promise.all(slideSources.map(src =>
+                fetch(src)
+                    .then(res => {
+                        if (!res.ok) throw new Error(`Could not load slide: ${src}`);
+                        return res.text();
+                    })
+            ))
+                .then(slidesHtml => {
+                    // Clear loading state and insert slides
+                    track.innerHTML = slidesHtml.join('');
+                    // Initialize presentation engine
+                    initEngine();
+                })
+                .catch(err => {
+                    console.error("Slide loading error:", err);
+                    track.innerHTML = `
+                    <div class="loading-state" style="color: #EF4444; height: 720px;">
+                        <i class="fa-solid fa-triangle-exclamation" style="font-size: 48px; margin-bottom: 10px;"></i>
+                        <span style="font-size: 22px; font-weight: 700; color: #FFF;">Browser CORS Security Error</span>
+                        <p style="font-size: 16px; color: #E2E8F0; max-width: 600px; text-align: center; line-height: 1.6; margin: 0;">
+                            You are opening this file directly via the <code style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; color: var(--accent-orange);">file://</code> protocol. Browsers block loading sub-files due to security policy.<br><br>
+                            <strong>Fix:</strong> Run a local web server — open this folder in VS Code and click <strong>Go Live</strong>, or run <code style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; color: var(--accent-orange);">python -m http.server</code> in this directory.
+                        </p>
+                    </div>
+                `;
+                });
+            function initEngine() {
+                const slides = document.querySelectorAll('.slide');
+                const scaler = document.querySelector('.slides-scaler');
+                const viewport = document.querySelector('.slides-viewport');
+                let currentSlide = 0;
+                const totalSlides = slides.length;
+                /* ==========================================
+                   VECTOR AUTO-SCALER (Aspect Ratio 16:9)
+                   ========================================== */
+                function resizeSlides() {
+                    if (document.body.classList.contains('export-mode')) {
+                        scaler.style.transform = 'none';
+                        return;
+                    }
+                    if (!viewport || !scaler) return;
+                    const viewportWidth = viewport.clientWidth;
+                    const viewportHeight = viewport.clientHeight;
+                    const targetWidth = 1280;
+                    const targetHeight = 720;
+                    // Determine scale factors
+                    const scaleX = viewportWidth / targetWidth;
+                    const scaleY = viewportHeight / targetHeight;
+                    // Use the minimum scale to fit within viewport perfectly
+                    const scale = Math.min(scaleX, scaleY);
+                    scaler.style.transform = `scale(${scale})`;
+                }
+                // Bind scaling event listeners
+                window.addEventListener('resize', resizeSlides);
+                // Run initially and multiple times during load to ensure exact calculation
+                resizeSlides();
+                setTimeout(resizeSlides, 100);
+                setTimeout(resizeSlides, 500);
+                /* ==========================================
+                   CORE PRESENTATION ENGINE FUNCTIONS
+                   ========================================== */
+                function goToSlide(index) {
+                    if (index < 0 || index >= totalSlides) return;
+                    // Handle directional slide transforms for a premium feel
+                    slides.forEach((slide, i) => {
+                        slide.classList.remove('active', 'prev-slide');
+                        if (i < index) {
+                            slide.classList.add('prev-slide');
+                        }
+                    });
+                    // Set active slide
+                    slides[index].classList.add('active');
+                    currentSlide = index;
+                }
+
+                // Expose to window for Playwright export script
+                window.goToSlide = goToSlide;
+                // Navigation controls
+                function nextSlide() {
+                    if (currentSlide < totalSlides - 1) {
+                        goToSlide(currentSlide + 1);
+                    } else {
+                        goToSlide(0);
+                    }
+                }
+                function prevSlide() {
+                    if (currentSlide > 0) {
+                        goToSlide(currentSlide - 1);
+                    }
+                }
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    switch (e.key) {
+                        case 'ArrowLeft':
+                        case 'PageUp':
+                            prevSlide();
+                            break;
+                        case 'ArrowRight':
+                        case 'PageDown':
+                        case ' ':
+                        case 'Enter':
+                            e.preventDefault(); // Prevents spacebar scrolling the page
+                            nextSlide();
+                            break;
+                        case 'f':
+                        case 'F':
+                            toggleFullscreen();
+                            break;
+                    }
+                });
+                // Mobile touch swipe gestures
+                let touchStartX = 0;
+                let touchEndX = 0;
+                const minSwipeDistance = 50; // pixels
+                viewport.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+                viewport.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                }, { passive: true });
+                function handleSwipe() {
+                    const diffX = touchEndX - touchStartX;
+                    if (Math.abs(diffX) < minSwipeDistance) return;
+                    if (diffX < 0) {
+                        nextSlide(); // Swiped left
+                    } else {
+                        prevSlide(); // Swiped right
+                    }
+                }
+                /* ==========================================
+                   FULLSCREEN MODE TOGGLER
+                   ========================================== */
+                function toggleFullscreen() {
+                    if (!document.fullscreenElement) {
+                        document.documentElement.requestFullscreen()
+                            .catch(err => console.error(`Fullscreen request failed: ${err.message}`));
+                    } else {
+                        document.exitFullscreen();
+                    }
+                }
+                // Sync fullscreen state change
+                document.addEventListener('fullscreenchange', () => {
+                    // Recalculate layout on fullscreen transition
+                    setTimeout(resizeSlides, 150);
+                });
+                // Init slide state
+                goToSlide(0);
+            }
+        });
+    </script>
+</body>
+
+</html>

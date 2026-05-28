@@ -1,0 +1,128 @@
+<!-- SLIDE 2: EXPECTED OUTPUT EXPERIENCE -->
+<div class="slide slide-output" id="slide-1" aria-label="Trang 2: Kết quả trải nghiệm đầu ra">
+    <style>
+        .slide-output .matrix-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.12fr;
+            flex-grow: 1;
+            border: 2px solid var(--border-blue);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: rgba(20, 33, 61, 0.35);
+        }
+
+        .slide-output .matrix-header {
+            background-color: var(--card-blue);
+            padding: 18px 15px;
+            border-bottom: 2px solid var(--border-blue);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-output .matrix-header:not(:last-child) {
+            border-right: 2px solid var(--border-blue);
+        }
+
+        .slide-output .column-header {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slide-output .matrix-cell {
+            padding: 22px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide-output .matrix-cell:not(:nth-child(3n)) {
+            border-right: 2px solid var(--border-blue);
+        }
+
+        .slide-output .matrix-cell:nth-child(4),
+        .slide-output .matrix-cell:nth-child(5),
+        .slide-output .matrix-cell:nth-child(6) {
+            border-top: 2px solid var(--border-blue);
+            background-color: rgba(10, 17, 40, 0.5);
+        }
+
+        .slide-output .item-title {
+            font-size: 23px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 8px;
+        }
+
+        .slide-output .item-desc {
+            font-size: 17.5px;
+            line-height: 1.55;
+            color: #E2E8F0;
+        }
+
+        .slide-output .status-badge {
+            background-color: rgba(16, 185, 129, 0.15);
+            border: 1px solid var(--badge-green);
+            color: var(--badge-green);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+    </style>
+
+    <div class="content-wrapper">
+        <h1 class="main-title">Đầu ra được mong đợi & Vòng lặp phản hồi</h1>
+
+        <div class="matrix-table">
+            <div class="matrix-header">
+                <div class="column-header"><i class="fa-solid fa-location-dot"></i> Địa Điểm Phù Hợp</div>
+            </div>
+            <div class="matrix-header">
+                <div class="column-header"><i class="fa-solid fa-compass"></i> Đề Xuất Hoạt Động</div>
+            </div>
+            <div class="matrix-header">
+                <div class="column-header"><i class="fa-solid fa-comments"></i> Vòng Lặp Phản Hồi</div>
+            </div>
+
+            <div class="matrix-cell">
+                <div class="item-title">Fansipan Sapa</div>
+                <div class="item-desc">Đỉnh núi cao nhất Đông Dương giữa biển mây trắng bồng bềnh và thảm thực vật rừng
+                    nguyên sinh hùng vĩ...</div>
+            </div>
+            <div class="matrix-cell">
+                <div class="item-title">Chụp ảnh tại Mường Hoa</div>
+                <div class="item-desc">Trải nghiệm lưu giữ khoảnh khắc độc đáo với những ruộng bậc thang tuyệt đẹp như
+                    tranh vẽ.</div>
+            </div>
+            <div class="matrix-cell">
+                <div><span class="status-badge">Mức độ hài lòng</span></div>
+                <div class="item-desc">Hệ thống tự động học và điều chỉnh danh sách đề xuất qua tương tác trực tiếp của
+                    người dùng sau khi nhận kết quả.</div>
+            </div>
+
+            <div class="matrix-cell">
+                <div class="item-title">Bãi Sao Phú Quốc</div>
+                <div class="item-desc">Nằm êm đềm phía Nam Đảo Ngọc, luôn lọt top những bãi biển hoang sơ cát trắng đẹp
+                    nhất hành tinh...</div>
+            </div>
+            <div class="matrix-cell">
+                <div class="item-title">Lặn ngắm rặng san hô</div>
+                <div class="item-desc">Khám phá thảm san hô rực rỡ sắc màu dưới làn nước xanh ngọc trong vắt của vùng
+                    biển phía Nam đảo.</div>
+            </div>
+            <div class="matrix-cell">
+                <div><span class="status-badge">Yêu cầu tạo lại</span></div>
+                <div class="item-desc">Người dùng có thể bấm tạo lại hoạt động khác cho điểm đến hiện tại mà không làm
+                    thay đổi các tùy chọn sở thích ban đầu.</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+<!-- SLIDE 10: FUTURISTIC N5 PIPELINE PROCESS -->
+<div class="slide slide-n5-pipeline" id="slide-9" aria-label="Trang 10: Quy trình xử lý N5 Pipeline">
+    <style>
+        .slide-n5-pipeline .content-wrapper {
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .slide-n5-pipeline .pipeline-layout {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 35px;
+            width: 100%;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .slide-n5-pipeline .section-header {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-orange);
+        }
+
+        .slide-n5-pipeline .hybrid-card {
+            background: rgba(20, 33, 61, 0.4);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 22px 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .slide-n5-pipeline .hybrid-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .slide-n5-pipeline .hybrid-card.highlighted {
+            border-color: rgba(255, 107, 53, 0.3);
+            background: linear-gradient(135deg, rgba(20, 33, 61, 0.4) 0%, rgba(255, 107, 53, 0.05) 100%);
+        }
+
+        .slide-n5-pipeline .card-sub-header {
+            font-size: 24px;
+            font-weight: 800;
+            color: #E2E8F0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+
+        .slide-n5-pipeline .card-sub-header.orange {
+            color: var(--accent-orange);
+        }
+
+        .slide-n5-pipeline .bullet-item {
+            font-size: 21px;
+            color: #F1F5F9;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .slide-n5-pipeline .bullet-item.yes {
+            color: #10B981;
+        }
+
+        .slide-n5-pipeline .bullet-item.no {
+            color: #EF4444;
+        }
+
+        .slide-n5-pipeline .process-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .slide-n5-pipeline .process-step {
+            background: rgba(20, 33, 61, 0.35);
+            border: 1.5px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            height: 62px;
+            transition: all 0.3s ease;
+        }
+
+        .slide-n5-pipeline .process-step:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateX(4px);
+        }
+
+        .slide-n5-pipeline .process-title {
+            font-size: 23px;
+            font-weight: 700;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .slide-n5-pipeline .process-title i {
+            color: var(--accent-orange);
+            font-size: 19px;
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title" style="margin-bottom: 24px;">AI Sinh Hoạt Động & Cơ Chế Dự Phòng (N5)</h1>
+        <div class="pipeline-layout">
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div class="section-header"><i class="fa-solid fa-scale-unbalanced"></i> Giải quyết mâu thuẫn</div>
+                <div class="hybrid-card">
+                    <div class="card-sub-header"><i class="fa-solid fa-file-invoice" style="color: #F1F5F9;"></i> Chỉ
+                        dùng Template</div>
+                    <span class="bullet-item yes"><i class="fa-solid fa-circle-check"></i> An toàn, hoạt động ổn
+                        định</span>
+                    <span class="bullet-item no"><i class="fa-solid fa-circle-xmark"></i> Nhàm chán, lặp đi lặp
+                        lại</span>
+                </div>
+                <div class="hybrid-card">
+                    <div class="card-sub-header"><i class="fa-solid fa-brain" style="color: #F1F5F9;"></i> Chỉ dùng AI
+                    </div>
+                    <span class="bullet-item yes"><i class="fa-solid fa-circle-check"></i> Sáng tạo, nội dung hấp
+                        dẫn</span>
+                    <span class="bullet-item no"><i class="fa-solid fa-circle-xmark"></i> Dễ quá tải (429), lỗi định
+                        dạng</span>
+                </div>
+                <div class="hybrid-card highlighted">
+                    <div class="card-sub-header orange"><i class="fa-solid fa-star"></i> N5: AI-First, Template-Backup
+                    </div>
+                    <span class="bullet-item" style="color: #E2E8F0; font-size: 22px; font-weight: 700;"><i
+                            class="fa-solid fa-shield-halved" style="color: var(--accent-orange);"></i> Sáng tạo của AI
+                        + An toàn của Template</span>
+                </div>
+            </div>
+            <div>
+                <div class="section-header"><i class="fa-solid fa-diagram-next"></i> Quy trình dự phòng an toàn</div>
+                <div class="process-container">
+                    <div class="process-step">
+                        <div class="process-title"><i class="fa-solid fa-link"></i><span>1. Chuỗi Model Xếp Tầng
+                                (Cascading)</span></div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-title"><i class="fa-solid fa-circle-question"></i><span>2. Tự Động Tránh Quá
+                                Tải API (429)</span></div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-title"><i class="fa-solid fa-shield-heart"></i><span>3. Kiểm Soát Chặt Định
+                                Dạng JSON</span></div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-title"><i class="fa-solid fa-file-pen"></i><span>4. Tự Động Fallback
+                                Template Dự Phòng</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

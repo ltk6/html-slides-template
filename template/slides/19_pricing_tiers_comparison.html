@@ -1,0 +1,191 @@
+<!-- SLIDE 13: PRICING TIERS COMPARISON -->
+<div class="slide slide-pricing" id="slide-12" aria-label="Slide 13: Pricing Tiers">
+    <style>
+        .slide-pricing .content-wrapper {
+            justify-content: center;
+        }
+
+        .slide-pricing .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            flex-grow: 1;
+            margin-top: 15px;
+            align-items: center; /* Center vertically so the middle one can pop out */
+        }
+
+        .slide-pricing .pricing-card {
+            background-color: rgba(20, 33, 61, 0.4);
+            border: 1px solid var(--border-blue);
+            border-radius: 20px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .slide-pricing .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Pro/Middle Tier Styling */
+        .slide-pricing .pro-tier {
+            background-color: rgba(255, 107, 53, 0.05);
+            border: 2px solid var(--accent-orange);
+            transform: scale(1.05);
+            z-index: 2;
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.15);
+        }
+        .slide-pricing .pro-tier:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .slide-pricing .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-orange);
+            color: #0A1128;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .slide-pricing .tier-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .slide-pricing .tier-price {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--text-white);
+            text-align: center;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .slide-pricing .currency {
+            font-size: 24px;
+            margin-top: 8px;
+            margin-right: 2px;
+            color: var(--text-dim);
+        }
+
+        .slide-pricing .period {
+            font-size: 18px;
+            color: var(--text-dim);
+            font-weight: 500;
+            margin-top: auto;
+            margin-bottom: 10px;
+        }
+
+        .slide-pricing .tier-desc {
+            text-align: center;
+            color: #F1F5F9;
+            font-size: 16px;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .slide-pricing .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .slide-pricing .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 17px;
+            color: #E2E8F0;
+        }
+
+        .slide-pricing .feature-icon {
+            color: #10B981;
+            font-size: 16px;
+        }
+        
+        .slide-pricing .feature-icon.missing {
+            color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .slide-pricing .feature-item.missing-text {
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: line-through;
+        }
+
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Transparent Pricing</h1>
+        
+        <div class="pricing-grid">
+            
+            <!-- Starter Tier -->
+            <div class="pricing-card">
+                <div class="tier-name">Starter</div>
+                <div class="tier-price">
+                    <span class="currency">$</span>0<span class="period">/mo</span>
+                </div>
+                <div class="tier-desc">Perfect for individuals trying out the platform.</div>
+                
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> 1 Project</div>
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> 100 API Requests/day</div>
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> Community Support</div>
+                    <div class="feature-item missing-text"><i class="fa-solid fa-xmark feature-icon missing"></i> Custom Domains</div>
+                    <div class="feature-item missing-text"><i class="fa-solid fa-xmark feature-icon missing"></i> SLA Guarantee</div>
+                </div>
+            </div>
+
+            <!-- Pro Tier -->
+            <div class="pricing-card pro-tier">
+                <div class="popular-badge">Most Popular</div>
+                <div class="tier-name" style="color: var(--accent-orange);">Professional</div>
+                <div class="tier-price">
+                    <span class="currency">$</span>49<span class="period">/mo</span>
+                </div>
+                <div class="tier-desc">Everything you need for a growing startup.</div>
+                
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> Unlimited Projects</div>
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> 10,000 API Requests/day</div>
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> Priority Email Support</div>
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> Custom Domains</div>
+                    <div class="feature-item missing-text"><i class="fa-solid fa-xmark feature-icon missing"></i> SLA Guarantee</div>
+                </div>
+            </div>
+
+            <!-- Enterprise Tier -->
+            <div class="pricing-card" style="border-color: rgba(0, 240, 255, 0.3);">
+                <div class="tier-name" style="color: #00F0FF;">Enterprise</div>
+                <div class="tier-price">
+                    <span class="currency">$</span>199<span class="period">/mo</span>
+                </div>
+                <div class="tier-desc">Advanced security and support for large teams.</div>
+                
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> Unlimited Everything</div>
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> Unlimited API Requests</div>
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> 24/7 Dedicated Support</div>
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> Custom Domains & SSO</div>
+                    <div class="feature-item"><i class="fa-solid fa-check feature-icon"></i> 99.99% SLA Guarantee</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

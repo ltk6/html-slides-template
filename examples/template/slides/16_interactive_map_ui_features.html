@@ -1,0 +1,227 @@
+<!-- SLIDE 9: INTERACTIVE UI -->
+<div class="slide slide-interactive" id="slide-8" aria-label="Slide 9: Interactive UI">
+    <style>
+        .slide-interactive .content-wrapper {
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .slide-interactive .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            flex-grow: 1;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        .slide-interactive .data-layers-box {
+            background: rgba(10, 17, 40, 0.45);
+            border: 1.5px solid rgba(255, 107, 53, 0.25);
+            border-radius: 16px;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(12px);
+        }
+
+        .slide-interactive .layers-header {
+            font-size: 23px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .slide-interactive .layers-flow {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .slide-interactive .layer-pill {
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 19px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .slide-interactive .layer-pill.blue {
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            color: #00F0FF;
+        }
+
+        .slide-interactive .layer-pill.orange {
+            background: rgba(255, 107, 53, 0.08);
+            border: 1px solid rgba(255, 107, 53, 0.25);
+            color: var(--accent-orange);
+        }
+
+        .slide-interactive .flow-connector {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 16px;
+        }
+
+        .slide-interactive .interaction-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .slide-interactive .interaction-card {
+            background: rgba(10, 17, 40, 0.45);
+            border: 1px solid var(--border-blue);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .slide-interactive .interaction-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-interactive .card-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 2px;
+        }
+
+        .slide-interactive .card-icon.orange {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--accent-orange);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .slide-interactive .card-icon.blue {
+            background: rgba(0, 240, 255, 0.1);
+            color: #00F0FF;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .slide-interactive .card-icon.green {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10B981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .slide-interactive .card-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-white);
+        }
+
+        .slide-interactive .card-desc {
+            font-size: 18px;
+            color: #F1F5F9;
+            line-height: 1.45;
+            font-weight: 600;
+        }
+        
+        .slide-interactive .highlight-banner {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.06) 0%, rgba(20, 33, 61, 0.4) 100%);
+            border: 1.5px solid rgba(0, 240, 255, 0.3);
+            border-radius: 16px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            backdrop-filter: blur(12px);
+        }
+
+        .slide-interactive .highlight-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 240, 255, 0.15);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            color: #00F0FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+            animation: pulse-ring 2.5s infinite;
+        }
+
+        .slide-interactive .highlight-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #00F0FF;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .slide-interactive .highlight-desc {
+            font-size: 18px;
+            color: #F1F5F9;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title" style="margin-bottom: 12px;">Interactive UI Components</h1>
+        <div class="feature-grid">
+            
+            <div class="data-layers-box">
+                <div class="layers-header"><i class="fa-solid fa-layer-group"></i><span>Data Integration Layer</span></div>
+                <div class="layers-flow">
+                    <div class="layer-pill blue"><i class="fa-solid fa-server"></i><span>Backend Data</span></div>
+                    <div class="flow-connector"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+                    <div class="layer-pill orange"><i class="fa-solid fa-laptop-code"></i><span>Frontend State</span></div>
+                </div>
+            </div>
+            
+            <div class="interaction-row">
+                <div class="interaction-card">
+                    <div class="card-icon orange"><i class="fa-solid fa-hand-pointer"></i></div>
+                    <div class="card-title">Click & Tap Events</div>
+                    <div class="card-desc">Users can interact with elements to reveal deeper contextual information.</div>
+                </div>
+                <div class="interaction-card">
+                    <div class="card-icon blue"><i class="fa-solid fa-arrows-up-down-left-right"></i></div>
+                    <div class="card-title">Drag & Drop</div>
+                    <div class="card-desc">Smooth reorganize capability for lists, grids, and customizable dashboards.</div>
+                </div>
+                <div class="interaction-card">
+                    <div class="card-icon green"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <div class="card-title">Data Visualization</div>
+                    <div class="card-desc">Complex metrics are rendered into easy-to-understand interactive charts.</div>
+                </div>
+            </div>
+            
+            <div class="highlight-banner">
+                <div class="highlight-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div>
+                    <div class="highlight-title">Performance Focused</div>
+                    <div class="highlight-desc">All UI animations use hardware-accelerated CSS properties ensuring smooth 60fps rendering even on low-end devices.</div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="system-outcome-box">
+            <div class="outcome-label">USER EXPERIENCE</div>
+            <div class="outcome-text">The interface feels responsive and alive, actively encouraging user exploration.</div>
+        </div>
+    </div>
+</div>

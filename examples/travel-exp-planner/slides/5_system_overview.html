@@ -1,0 +1,185 @@
+<!-- SLIDE 5: SYSTEM OVERVIEW -->
+<div class="slide slide-overview" id="slide-4" aria-label="Trang 5: Tổng quan hệ thống">
+    <style>
+        .slide-overview .content-wrapper {
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .slide-overview .tier-container {
+            display: flex;
+            align-items: center;
+            background: rgba(20, 33, 61, 0.4);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 16px 24px;
+            position: relative;
+            gap: 25px;
+        }
+
+        .slide-overview .tier-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--accent-orange);
+            border-radius: 4px 0 0 4px;
+        }
+
+        .slide-overview .tier-badge {
+            width: 210px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .slide-overview .tier-num {
+            font-size: 17px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--accent-orange);
+            letter-spacing: 1.5px;
+        }
+
+        .slide-overview .tier-name {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-white);
+        }
+
+        .slide-overview .tier-code {
+            font-size: 17px;
+            color: #F1F5F9;
+            font-weight: 600;
+        }
+
+        .slide-overview .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            flex-grow: 1;
+        }
+
+        .slide-overview .tier-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            flex-grow: 1;
+        }
+
+        .slide-overview .tier-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1.5px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 68px;
+            transition: all 0.3s ease;
+        }
+
+        .slide-overview .tier-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .slide-overview .tier-card-title {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .slide-overview .tier-giao-dien,
+        .slide-overview .tier-bo-xu-ly {
+            border-color: rgba(0, 240, 255, 0.15);
+        }
+
+        .slide-overview .tier-giao-dien::before,
+        .slide-overview .tier-bo-xu-ly::before {
+            background: #00F0FF;
+        }
+
+        .slide-overview .tier-giao-dien .tier-num,
+        .slide-overview .tier-bo-xu-ly .tier-num {
+            color: #00F0FF;
+        }
+
+        .slide-overview .tier-giao-dien .tier-card-title i,
+        .slide-overview .tier-bo-xu-ly .tier-card-title i {
+            color: #00F0FF !important;
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Kiến Trúc Hoạt Động Ba Tầng</h1>
+        <div class="tier-container tier-giao-dien">
+            <div class="tier-badge"><span class="tier-num">Tầng 1</span><span class="tier-name">Giao Diện</span><span
+                    class="tier-code"><i class="fa-solid fa-desktop"></i> Module N16</span></div>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-keyboard"></i><span>Cung Cấp Đầu Vào</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-map"></i><span>Bản Đồ Tương Tác</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-clock-rotate-left"></i><span>Nhớ Ngữ Cảnh</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tier-container" style="background: rgba(20, 33, 61, 0.45); border-color: rgba(255, 107, 53, 0.15);">
+            <div class="tier-badge"><span class="tier-num">Tầng 2</span><span class="tier-name">Bộ Điều Phối</span><span
+                    class="tier-code"><i class="fa-solid fa-microchip"></i> N8 Orchestrator</span></div>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-bell"
+                            style="color: var(--accent-orange);"></i><span>Tiếp Nhận Yêu Cầu</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-route"
+                            style="color: var(--accent-orange);"></i><span>Điều Phối Xử Lý</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-bolt"
+                            style="color: var(--accent-orange);"></i><span>Tránh Tính Toán Lại</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="tier-container tier-bo-xu-ly">
+            <div class="tier-badge"><span class="tier-num">Tầng 3</span><span class="tier-name">Các Bộ Xử Lý</span><span
+                    class="tier-code"><i class="fa-solid fa-gears"></i> N1-N6, N9-N17</span></div>
+            <div class="tier-grid-4">
+                <div class="tier-card">
+                    <div class="tier-card-title" style="font-size: 21px;"><i class="fa-solid fa-language"></i><span>N1 -
+                            N2</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title" style="font-size: 21px;"><i
+                            class="fa-solid fa-arrow-down-wide-narrow"></i><span>N4 - N6</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title" style="font-size: 21px;"><i
+                            class="fa-solid fa-map-location-dot"></i><span>N9 - N14</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title" style="font-size: 21px;"><i
+                            class="fa-solid fa-reply"></i><span>N17</span></div>
+                </div>
+            </div>
+        </div>
+        <div
+            style="text-align: center; margin-top: 15px; font-size: 23px; font-weight: 700; color: var(--accent-orange);">
+            <i class="fa-solid fa-circle-check"></i> Tất cả ba tầng phối hợp vận hành đồng bộ như một cỗ máy duy nhất.
+        </div>
+    </div>
+</div>

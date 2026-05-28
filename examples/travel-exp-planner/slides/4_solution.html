@@ -1,0 +1,141 @@
+<!-- 
+SPEAKER SCRIPT (60 giây):
+"Chúng ta giải quyết bài toán bằng bốn nguyên tắc:
+Nguyên tắc 1: Linh Hoạt Với Đầu Vào
+Nhập tag, text, ảnh, hoặc cả ba cùng lúc
+Hệ thống xử lý hết, không phàn nàn
+Nguyên tắc 2: Tự Động Làm Giàu Dữ Liệu (Augmentation)
+Bạn chỉ viết: 'Yên tĩnh'
+Hệ thống tự nghĩ thêm: bình yên, tĩnh lặng, thư giãn
+Kết quả: Dữ liệu bạn cung cấp được mở rộng tự động
+Nguyên tắc 3: Thích Nghi Với Cách Bạn Nhập (Dynamic Weights)
+Bạn nhập chủ yếu tags? → Tags được ưu tiên
+Bạn nhập chủ yếu text? → Text được ưu tiên
+Kết quả: Xếp hạng phù hợp hơn vì hệ thống hiểu bạn quan tâm cái gì
+Nguyên tắc 4: Học Từ Phản Hồi
+Hệ thống nhớ, học, điều chỉnh từ phản hồi của bạn
+Không cần nhập lại toàn bộ dữ liêu từ đầu
+Kết quả: Tìm kiếm trở thành một cuộc trò chuyện
+Bốn nguyên tắc này là cốt lõi của toàn bộ hệ thống."
+-->
+<!-- SLIDE 4: FOUR PRINCIPLES OF SOLUTION -->
+<div class="slide slide-solution" id="slide-3" aria-label="Trang 4: Phương pháp giải quyết tổng quan">
+    <style>
+        .slide-solution .grid-container {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 40px;
+            flex-grow: 1;
+        }
+
+        .slide-solution .focus-card {
+            background: linear-gradient(135deg, rgba(20, 33, 61, 0.6) 0%, rgba(0, 240, 255, 0.08) 100%) !important;
+            border-color: #00F0FF !important;
+            border-radius: 20px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 240, 255, 0.05);
+        }
+
+        .slide-solution .feature-title {
+            font-size: 25px;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .slide-solution .focus-card .feature-title {
+            color: #00F0FF !important;
+        }
+
+        .slide-solution .feature-desc {
+            font-size: 17.5px;
+            line-height: 1.5;
+            color: #E2E8F0;
+        }
+
+        .slide-solution .pill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .slide-solution .pill {
+            background-color: rgba(255, 107, 53, 0.12);
+            border: 1px solid rgba(255, 107, 53, 0.4);
+            color: var(--text-white);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 14.5px;
+            font-weight: 600;
+        }
+
+        .slide-solution .right-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .slide-solution .stack-item {
+            border-left: 4px solid var(--accent-orange);
+            padding-left: 20px;
+        }
+    </style>
+
+    <div class="content-wrapper">
+        <h1 class="main-title">Hệ Thống Giải Quyết Bằng Cách Nào?</h1>
+
+        <div class="grid-container">
+            <!-- Nguyên tắc 1: Linh hoạt với đầu vào -->
+            <div class="focus-card">
+                <div class="feature-title" style="font-size: 35px; font-weight: 800; margin-bottom: 16px;">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> 1. Linh Hoạt Với Đầu Vào
+                </div>
+                <p class="feature-desc" style="font-size: 23px; line-height: 1.55; margin-bottom: 24px;">
+                    Nhập tag, viết text, gửi ảnh, hoặc kết hợp cả ba cùng lúc. Hệ thống tự động xử lý mượt mà và tối ưu
+                    kết quả:
+                </p>
+                <div class="pill-container">
+                    <div class="pill"><i class="fa-solid fa-tags" style="color: var(--accent-orange);"></i> Chọn Tags
+                        nhanh</div>
+                    <div class="pill"><i class="fa-solid fa-pen-fancy" style="color: var(--accent-orange);"></i> Viết mô
+                        tả tự do</div>
+                    <div class="pill"><i class="fa-solid fa-image" style="color: var(--accent-orange);"></i> Gửi ảnh
+                        trực quan</div>
+                    <div class="pill"
+                        style="background-color: var(--accent-orange); color: #ffffff; border: none; width: 100%; text-align: center; display: flex; justify-content: center; font-size: 18px;">
+                        <i class="fa-solid fa-arrows-spin"></i> Xử lý linh hoạt mọi tổ hợp đầu vào
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nguyên tắc 2, 3, 4 -->
+            <div class="right-stack">
+                <div class="stack-item">
+                    <div class="feature-title"><i class="fa-solid fa-chart-line"></i> 2. Tự Động Làm Giàu Dữ Liệu</div>
+                    <p class="feature-desc" style="font-size: 18.5px;">Bạn chỉ viết: <em>'Yên tĩnh'</em>. Hệ thống tự
+                        nghĩ thêm: <em>bình yên, tĩnh lặng, thư giãn</em> để tự động mở rộng và làm giàu ngữ nghĩa.</p>
+                </div>
+
+                <div class="stack-item">
+                    <div class="feature-title"><i class="fa-solid fa-sliders"></i> 3. Thích Nghi Theo Cách Nhập</div>
+                    <p class="feature-desc" style="font-size: 18.5px;">Ưu tiên tags khi bạn nhập tags, ưu tiên text khi
+                        bạn nhập text. Trọng số động giúp xếp hạng phù hợp hơn theo đúng sự quan tâm của bạn.</p>
+                </div>
+
+                <div class="stack-item">
+                    <div class="feature-title"><i class="fa-solid fa-arrows-rotate"></i> 4. Học Từ Phản Hồi</div>
+                    <p class="feature-desc" style="font-size: 18.5px;">Hệ thống tự ghi nhớ, học hỏi và tinh chỉnh ngay
+                        từ feedback tiếp theo của bạn mà không cần nhập lại toàn bộ thông tin từ đầu.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

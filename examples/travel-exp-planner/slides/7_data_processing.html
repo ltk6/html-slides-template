@@ -1,0 +1,199 @@
+<!-- SLIDE 7: INPUT DATA ENRICHMENT -->
+<div class="slide slide-data" id="slide-6" aria-label="Trang 7: Xử lý dữ liệu đầu vào">
+    <style>
+        .slide-data .content-wrapper {
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .slide-data .split-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            width: 100%;
+            flex-grow: 1;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .slide-data .section-header {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .slide-data .sub-text {
+            font-size: 23px;
+            color: var(--text-white);
+            margin-bottom: 16px;
+            line-height: 1.45;
+        }
+
+        .slide-data .comparison-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 10px;
+        }
+
+        .slide-data .input-card {
+            background: rgba(20, 33, 61, 0.35);
+            border-radius: 14px;
+            padding: 24px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .slide-data .input-card:hover {
+            transform: translateY(-2px);
+            background: rgba(20, 33, 61, 0.45);
+        }
+
+        .slide-data .input-card.poor {
+            border: 1.5px solid rgba(239, 68, 68, 0.3);
+            background: linear-gradient(135deg, rgba(20, 33, 61, 0.4) 0%, rgba(239, 68, 68, 0.05) 100%);
+        }
+
+        .slide-data .input-card.rich {
+            border: 1.5px solid rgba(255, 107, 53, 0.3);
+            background: linear-gradient(135deg, rgba(20, 33, 61, 0.4) 0%, rgba(255, 107, 53, 0.05) 100%);
+        }
+
+        .slide-data .card-header {
+            font-size: 24px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .slide-data .poor .card-header {
+            color: #EF4444;
+        }
+
+        .slide-data .rich .card-header {
+            color: var(--accent-orange);
+        }
+
+        .slide-data .card-detail {
+            font-size: 21px;
+            color: #E2E8F0;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        .slide-data .solution-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 10px;
+        }
+
+        .slide-data .solution-item {
+            background: rgba(20, 33, 61, 0.4);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 18px 24px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .slide-data .solution-item:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateX(4px);
+        }
+
+        .slide-data .solution-title {
+            font-size: 23px;
+            font-weight: 800;
+            color: var(--text-white);
+            display: inline-block;
+        }
+
+        .slide-data .solution-desc {
+            font-size: 20px;
+            color: #F1F5F9;
+            line-height: 1.5;
+            display: inline;
+            margin-left: 6px;
+            font-weight: 600;
+        }
+
+        .slide-data .system-outcome-box {
+            margin-top: 20px;
+            padding: 24px 32px;
+            border-color: rgba(255, 107, 53, 0.15) !important;
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.05);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide-data .outcome-label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            color: var(--accent-orange);
+        }
+
+        .slide-data .outcome-text {
+            font-size: 29px;
+            font-weight: 800;
+            line-height: 1.4;
+            color: var(--text-white);
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title" style="margin-bottom: 24px;">Xử Lý Dữ Liệu Đầu Vào</h1>
+        <div class="split-grid">
+            <div>
+                <div class="section-header"><i class="fa-solid fa-triangle-exclamation"></i><span>Vấn đề cốt lõi</span>
+                </div>
+                <div class="comparison-container">
+                    <div class="input-card poor">
+                        <div class="card-header"><i class="fa-solid fa-circle-xmark"></i><span>Nhập Thô: "Đi
+                                biển"</span></div>
+                        <div class="card-detail"><i class="fa-solid fa-arrow-right-long"
+                                style="color: #EF4444; margin-right: 6px;"></i><span>Quá ngắn, thiếu chi tiết → Xếp hạng
+                                kém.</span></div>
+                    </div>
+                    <div class="input-card rich">
+                        <div class="card-header"><i class="fa-solid fa-circle-check"></i><span>Nhập Đủ: "Biển yên tĩnh,
+                                hoàng hôn..."</span></div>
+                        <div class="card-detail"><i class="fa-solid fa-arrow-right-long"
+                                style="color: var(--accent-orange); margin-right: 6px;"></i><span>Đầy đủ ngữ cảnh → Đề
+                                xuất chính xác vượt trội.</span></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-header"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Tự động làm giàu dữ
+                        liệu</span></div>
+                <div class="solution-container">
+                    <div class="solution-item"><span class="solution-title"><i
+                                class="fa-solid fa-arrows-split-up-and-left"
+                                style="color: var(--accent-orange); margin-right: 6px;"></i> 1. Mở Rộng:</span><span
+                            class="solution-desc">Từ khóa "Yên tĩnh" → thêm: <em>bình yên, tĩnh lặng, thư
+                                giãn</em>.</span></div>
+                    <div class="solution-item"><span class="solution-title"><i class="fa-solid fa-image"
+                                style="color: var(--accent-orange); margin-right: 6px;"></i> 2. Xử Lý Ảnh:</span><span
+                            class="solution-desc">Chuyển hình ảnh cảm hứng thành văn bản mô tả ngữ cảnh.</span></div>
+                    <div class="solution-item"><span class="solution-title"><i class="fa-solid fa-shield-heart"
+                                style="color: var(--accent-orange); margin-right: 6px;"></i> 3. Độ Tin
+                            Tưởng:</span><span class="solution-desc">Viết chi tiết → Hệ thống ưu tiên dữ liệu gốc của
+                            bạn.</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="system-outcome-box">
+            <div class="outcome-label">ĐÚC KẾT CỐT LÕI</div>
+            <div class="outcome-text">Dù bạn nhập ít hay nhiều, hệ thống luôn tự động tối ưu để tìm kiếm tốt nhất.</div>
+        </div>
+    </div>
+</div>

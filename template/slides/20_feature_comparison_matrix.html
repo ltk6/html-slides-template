@@ -1,0 +1,145 @@
+<!-- SLIDE 16: FEATURE COMPARISON MATRIX -->
+<div class="slide slide-comparison-matrix" id="slide-15" aria-label="Slide 16: Feature Comparison Matrix">
+    <style>
+        .slide-comparison-matrix .content-wrapper {
+            justify-content: flex-start;
+        }
+
+        .slide-comparison-matrix .matrix-container {
+            width: 100%;
+            margin-top: 20px;
+            background: rgba(20, 33, 61, 0.3);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .slide-comparison-matrix table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .slide-comparison-matrix th {
+            padding: 25px 20px;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-white);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .slide-comparison-matrix th.feature-col {
+            text-align: left;
+            width: 40%;
+            color: var(--text-dim);
+            font-weight: 600;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slide-comparison-matrix th.highlight-col {
+            background: rgba(255, 107, 53, 0.15);
+            color: var(--accent-orange);
+            border-bottom: 2px solid var(--accent-orange);
+            border-top: 2px solid var(--accent-orange);
+        }
+
+        .slide-comparison-matrix td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .slide-comparison-matrix td.feature-col {
+            text-align: left;
+            font-size: 20px;
+            font-weight: 600;
+            color: #E2E8F0;
+        }
+
+        .slide-comparison-matrix td.highlight-col {
+            background: rgba(255, 107, 53, 0.05);
+            border-left: 2px solid rgba(255, 107, 53, 0.3);
+            border-right: 2px solid rgba(255, 107, 53, 0.3);
+        }
+        
+        .slide-comparison-matrix tr:last-child td.highlight-col {
+            border-bottom: 2px solid var(--accent-orange);
+        }
+
+        .slide-comparison-matrix .check-icon {
+            color: #10B981;
+            font-size: 24px;
+        }
+
+        .slide-comparison-matrix .cross-icon {
+            color: rgba(239, 68, 68, 0.5);
+            font-size: 24px;
+        }
+        
+        .slide-comparison-matrix .highlight-check {
+            color: var(--accent-orange);
+            font-size: 28px;
+            filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.4));
+        }
+
+        .slide-comparison-matrix tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Competitive Landscape</h1>
+        
+        <div class="matrix-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="feature-col">Key Capabilities</th>
+                        <th>Legacy Tool A</th>
+                        <th>Competitor B</th>
+                        <th class="highlight-col">Our Platform</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-col">Real-time Data Sync</td>
+                        <td><i class="fa-solid fa-xmark cross-icon"></i></td>
+                        <td><i class="fa-solid fa-check check-icon"></i></td>
+                        <td class="highlight-col"><i class="fa-solid fa-check highlight-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">End-to-End Encryption</td>
+                        <td><i class="fa-solid fa-xmark cross-icon"></i></td>
+                        <td><i class="fa-solid fa-xmark cross-icon"></i></td>
+                        <td class="highlight-col"><i class="fa-solid fa-check highlight-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Custom API Integrations</td>
+                        <td><i class="fa-solid fa-check check-icon"></i></td>
+                        <td><i class="fa-solid fa-xmark cross-icon"></i></td>
+                        <td class="highlight-col"><i class="fa-solid fa-check highlight-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">AI-Powered Insights</td>
+                        <td><i class="fa-solid fa-xmark cross-icon"></i></td>
+                        <td><i class="fa-solid fa-xmark cross-icon"></i></td>
+                        <td class="highlight-col"><i class="fa-solid fa-check highlight-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Automated Workflows</td>
+                        <td><i class="fa-solid fa-check check-icon"></i></td>
+                        <td><i class="fa-solid fa-check check-icon"></i></td>
+                        <td class="highlight-col"><i class="fa-solid fa-check highlight-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Dedicated Support Manager</td>
+                        <td><i class="fa-solid fa-xmark cross-icon"></i></td>
+                        <td><i class="fa-solid fa-check check-icon"></i></td>
+                        <td class="highlight-col"><i class="fa-solid fa-check highlight-check"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

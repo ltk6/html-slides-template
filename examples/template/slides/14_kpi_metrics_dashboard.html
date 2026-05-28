@@ -1,0 +1,140 @@
+<!-- SLIDE 6: METRICS DASHBOARD -->
+<div class="slide slide-metrics" id="slide-5" aria-label="Slide 6: Metrics Dashboard">
+    <style>
+        .slide-metrics .content-wrapper {
+            justify-content: center;
+        }
+
+        .slide-metrics .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .slide-metrics .stat-card {
+            background: rgba(20, 33, 61, 0.4);
+            border: 1.5px solid rgba(255, 107, 53, 0.25);
+            border-radius: 16px;
+            padding: 35px 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .slide-metrics .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 107, 53, 0.6);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.08);
+        }
+
+        .slide-metrics .stat-value {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            line-height: 1;
+            font-family: monospace;
+        }
+
+        .slide-metrics .stat-label {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slide-metrics .stat-desc {
+            font-size: 17px;
+            color: #F1F5F9;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        .slide-metrics .trend-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .slide-metrics .trend-up {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10B981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .slide-metrics .trend-down {
+            background: rgba(239, 68, 68, 0.15);
+            color: #EF4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .slide-metrics .metrics-footer {
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px dashed rgba(0, 240, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .slide-metrics .footer-icon {
+            font-size: 32px;
+            color: #00F0FF;
+        }
+
+        .slide-metrics .footer-text {
+            font-size: 20px;
+            color: #E2E8F0;
+            line-height: 1.5;
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Key Performance Indicators</h1>
+        
+        <div class="metrics-grid">
+            <div class="stat-card">
+                <div class="trend-badge trend-up"><i class="fa-solid fa-arrow-trend-up"></i> 24%</div>
+                <span class="stat-value">99.9%</span>
+                <span class="stat-label">System Uptime</span>
+                <p class="stat-desc">Maintained high availability across all critical infrastructure components.</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="trend-badge trend-up"><i class="fa-solid fa-arrow-trend-up"></i> 12%</div>
+                <span class="stat-value">4.8s</span>
+                <span class="stat-label">Avg Load Time</span>
+                <p class="stat-desc">Significant performance improvements following the v2.0 optimization release.</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="trend-badge trend-down"><i class="fa-solid fa-arrow-trend-down"></i> 40%</div>
+                <span class="stat-value">120ms</span>
+                <span class="stat-label">Latency</span>
+                <p class="stat-desc">Reduced network latency through new CDN edge routing strategies.</p>
+            </div>
+        </div>
+
+        <div class="metrics-footer">
+            <div class="footer-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="footer-text">
+                <strong>Data Insights:</strong> All metrics are collected in real-time. Performance has exceeded initial Q3 targets across the board.
+            </div>
+        </div>
+
+    </div>
+</div>

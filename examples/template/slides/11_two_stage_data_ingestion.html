@@ -1,0 +1,192 @@
+<!-- SLIDE 7: MACRO FLOW -->
+<div class="slide slide-macro-flow" id="slide-6" aria-label="Slide 7: Macro Flow">
+    <style>
+        .slide-macro-flow .content-wrapper {
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .slide-macro-flow .flow-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
+            flex-grow: 1;
+            box-sizing: border-box;
+        }
+
+        .slide-macro-flow .stage-card {
+            background: rgba(20, 33, 61, 0.4);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 28px 34px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .slide-macro-flow .stage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+
+        .slide-macro-flow .stage-1::before {
+            background: #00F0FF;
+        }
+
+        .slide-macro-flow .stage-2::before {
+            background: var(--accent-orange);
+        }
+
+        .slide-macro-flow .stage-num {
+            font-size: 17px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+        }
+
+        .slide-macro-flow .stage-1 .stage-num {
+            color: #00F0FF;
+        }
+
+        .slide-macro-flow .stage-2 .stage-num {
+            color: var(--accent-orange);
+        }
+
+        .slide-macro-flow .stage-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-white);
+        }
+
+        .slide-macro-flow .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .slide-macro-flow .step-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .slide-macro-flow .step-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .slide-macro-flow .stage-1 .step-badge {
+            background: rgba(0, 240, 255, 0.15);
+            color: #00F0FF;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+
+        .slide-macro-flow .stage-2 .step-badge {
+            background: rgba(255, 107, 53, 0.15);
+            color: var(--accent-orange);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .slide-macro-flow .step-title {
+            font-size: 23px;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .slide-macro-flow .summary-banner {
+            width: 100%;
+            background: rgba(255, 107, 53, 0.05);
+            border: 1.5px dashed rgba(255, 107, 53, 0.25);
+            border-radius: 12px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-sizing: border-box;
+        }
+
+        .slide-macro-flow .summary-icon {
+            font-size: 25px;
+            color: var(--accent-orange);
+        }
+
+        .slide-macro-flow .summary-text {
+            font-size: 21px;
+            font-weight: 600;
+            color: #E2E8F0;
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Two-Stage Processing Flow</h1>
+        <div class="flow-grid">
+            <div class="stage-card stage-1">
+                <div>
+                    <span class="stage-num">Phase 1</span>
+                    <span class="stage-title">Data Ingestion</span>
+                </div>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-badge">1</div>
+                        <div><span class="step-title">Receive Client Request</span></div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-badge">2</div>
+                        <div><span class="step-title">Validate Payload Structure</span></div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-badge">3</div>
+                        <div><span class="step-title">Sanitize & Normalize Data</span></div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-badge">4</div>
+                        <div><span class="step-title">Queue for Processing</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="stage-card stage-2">
+                <div>
+                    <span class="stage-num">Phase 2</span>
+                    <span class="stage-title">Execution Engine</span>
+                </div>
+                <div class="step-list">
+                    <div class="step-item">
+                        <div class="step-badge">1</div>
+                        <div><span class="step-title">Dequeue Task</span></div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-badge">2</div>
+                        <div><span class="step-title">Run Transformation Logic</span></div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-badge">3</div>
+                        <div><span class="step-title">Generate Output Assets</span></div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-badge">4</div>
+                        <div><span class="step-title">Notify Client webhook</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="summary-banner">
+            <div class="summary-icon"><i class="fa-solid fa-circle-info"></i></div>
+            <div class="summary-text">By decoupling ingestion from execution, the system can gracefully handle sudden spikes in traffic without dropping requests.</div>
+        </div>
+    </div>
+</div>

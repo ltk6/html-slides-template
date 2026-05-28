@@ -1,0 +1,172 @@
+<!-- SLIDE 08: DEVICE MOCKUP FRAMES -->
+<div class="slide slide-device-mockup" id="slide-08" aria-label="Slide 08: Device Mockup Frames">
+    <style>
+        .slide-device-mockup .content-wrapper {
+            justify-content: center;
+        }
+
+        .slide-device-mockup .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .slide-device-mockup .text-content h2 {
+            font-size: 42px;
+            color: var(--text-white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .slide-device-mockup .text-content p {
+            font-size: 20px;
+            color: #F1F5F9;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Mockup Container */
+        .slide-device-mockup .mockup-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        /* Laptop Mockup CSS */
+        .slide-device-mockup .laptop-frame {
+            width: 600px;
+            height: 380px;
+            background: #1e1e1e;
+            border-radius: 16px 16px 0 0;
+            border: 8px solid #333;
+            border-bottom: none;
+            position: relative;
+            box-shadow: inset 0 0 0 2px #000;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: rotateY(-10deg) rotateX(5deg);
+            transform-style: preserve-3d;
+            box-shadow: -20px 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .slide-device-mockup .laptop-base {
+            width: 680px;
+            height: 20px;
+            background: #2a2a2a;
+            border-radius: 0 0 20px 20px;
+            position: absolute;
+            bottom: -20px;
+            left: -40px;
+            transform: rotateY(-10deg) rotateX(5deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        
+        .slide-device-mockup .laptop-notch {
+            width: 100px;
+            height: 10px;
+            background: #111;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 0 0 8px 8px;
+            z-index: 2;
+        }
+
+        .slide-device-mockup .screen-content {
+            flex-grow: 1;
+            background: #0A1128;
+            position: relative;
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        /* Fake UI inside the screen */
+        .slide-device-mockup .fake-navbar {
+            height: 30px;
+            background: rgba(20, 33, 61, 0.8);
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            gap: 10px;
+        }
+        
+        .slide-device-mockup .fake-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff5f56;
+        }
+        
+        .slide-device-mockup .fake-dot:nth-child(2) { background: #ffbd2e; }
+        .slide-device-mockup .fake-dot:nth-child(3) { background: #27c93f; }
+        
+        .slide-device-mockup .fake-hero {
+            height: 120px;
+            background: linear-gradient(135deg, rgba(255,107,53,0.2), transparent);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,107,53,0.3);
+        }
+        
+        .slide-device-mockup .fake-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .slide-device-mockup .fake-card {
+            height: 100px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+    </style>
+    <div class="content-wrapper">
+        <div class="split-layout">
+            
+            <div class="text-content">
+                <span class="eyebrow" style="color: var(--accent-orange); font-weight: 800; letter-spacing: 2px; text-transform: uppercase;">Responsive Design</span>
+                <h2>Native feel on every device.</h2>
+                <p>
+                    Our platform renders seamlessly across desktop, tablet, and mobile. The UI automatically adapts, ensuring that power users have the density they need, while mobile users get simplified, touch-friendly workflows.
+                </p>
+                <ul class="bullet-list">
+                    <li>Progressive Web App (PWA) ready</li>
+                    <li>Sub-second Time to Interactive (TTI)</li>
+                    <li>Offline caching via Service Workers</li>
+                </ul>
+            </div>
+
+            <div class="mockup-container">
+                <div class="laptop-frame">
+                    <div class="laptop-notch"></div>
+                    <div class="screen-content">
+                        <!-- Simulated UI inside the laptop screen -->
+                        <div class="fake-navbar">
+                            <div class="fake-dot"></div>
+                            <div class="fake-dot"></div>
+                            <div class="fake-dot"></div>
+                        </div>
+                        <div class="fake-hero"></div>
+                        <div class="fake-grid">
+                            <div class="fake-card"></div>
+                            <div class="fake-card"></div>
+                            <div class="fake-card"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="laptop-base"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

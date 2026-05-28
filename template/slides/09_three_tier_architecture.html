@@ -1,0 +1,190 @@
+<!-- SLIDE 4: ARCHITECTURE TIERS -->
+<div class="slide slide-architecture" id="slide-3" aria-label="Slide 4: Architecture Tiers">
+    <style>
+        .slide-architecture .content-wrapper {
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .slide-architecture .tier-container {
+            display: flex;
+            align-items: center;
+            background: rgba(20, 33, 61, 0.4);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 16px 24px;
+            position: relative;
+            gap: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .slide-architecture .tier-container:hover {
+            background: rgba(20, 33, 61, 0.6);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .slide-architecture .tier-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--accent-orange);
+            border-radius: 4px 0 0 4px;
+        }
+
+        .slide-architecture .tier-badge {
+            width: 220px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .slide-architecture .tier-num {
+            font-size: 17px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--accent-orange);
+            letter-spacing: 1.5px;
+        }
+
+        .slide-architecture .tier-name {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-white);
+        }
+
+        .slide-architecture .tier-desc {
+            font-size: 15px;
+            color: #F1F5F9;
+            font-weight: 600;
+        }
+
+        .slide-architecture .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            flex-grow: 1;
+        }
+
+        .slide-architecture .tier-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1.5px solid rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 64px;
+            transition: all 0.3s ease;
+        }
+
+        .slide-architecture .tier-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .slide-architecture .tier-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Cyan Tier Modifier */
+        .slide-architecture .tier-cyan {
+            border-color: rgba(0, 240, 255, 0.15);
+        }
+        .slide-architecture .tier-cyan::before {
+            background: #00F0FF;
+        }
+        .slide-architecture .tier-cyan .tier-num {
+            color: #00F0FF;
+        }
+        .slide-architecture .tier-cyan .tier-card-title i {
+            color: #00F0FF !important;
+        }
+        
+        /* Green Tier Modifier */
+        .slide-architecture .tier-green {
+            border-color: rgba(16, 185, 129, 0.15);
+        }
+        .slide-architecture .tier-green::before {
+            background: #10B981;
+        }
+        .slide-architecture .tier-green .tier-num {
+            color: #10B981;
+        }
+        .slide-architecture .tier-green .tier-card-title i {
+            color: #10B981 !important;
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">System Architecture</h1>
+        
+        <div class="tier-container tier-cyan">
+            <div class="tier-badge">
+                <span class="tier-num">Layer 1</span>
+                <span class="tier-name">Presentation</span>
+                <span class="tier-desc">Client Applications</span>
+            </div>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-mobile-screen"></i><span>Mobile App</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-window-maximize"></i><span>Web Portal</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-terminal"></i><span>CLI Tool</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tier-container" style="background: rgba(20, 33, 61, 0.45); border-color: rgba(255, 107, 53, 0.15);">
+            <div class="tier-badge">
+                <span class="tier-num">Layer 2</span>
+                <span class="tier-name">Business Logic</span>
+                <span class="tier-desc">API Services & Routing</span>
+            </div>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-server" style="color: var(--accent-orange);"></i><span>API Gateway</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-shield-halved" style="color: var(--accent-orange);"></i><span>Auth Service</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-bolt" style="color: var(--accent-orange);"></i><span>Event Bus</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tier-container tier-green">
+            <div class="tier-badge">
+                <span class="tier-num">Layer 3</span>
+                <span class="tier-name">Data Storage</span>
+                <span class="tier-desc">Persistence & Caching</span>
+            </div>
+            <div class="tier-grid">
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-database"></i><span>Relational DB</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-memory"></i><span>Redis Cache</span></div>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-card-title"><i class="fa-solid fa-hard-drive"></i><span>Blob Storage</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

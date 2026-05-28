@@ -1,0 +1,142 @@
+<!-- SLIDE 10: USER QUOTE -->
+<div class="slide slide-user-quote" id="slide-9" aria-label="Slide 10: User Quote">
+    <style>
+        .slide-user-quote .content-wrapper {
+            justify-content: center;
+        }
+
+        .slide-user-quote .quote-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-grow: 1;
+        }
+
+        .slide-user-quote .speech-bubble {
+            position: relative;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 40px 50px;
+            color: #E2E8F0;
+            transition: all 0.3s ease;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .slide-user-quote .speech-bubble:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-orange);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.05);
+        }
+
+        .slide-user-quote .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 20px 20px 0;
+            border-style: solid;
+            border-color: rgba(255, 255, 255, 0.035) transparent;
+            display: block;
+            width: 0;
+            transition: border-color 0.3s ease;
+        }
+        
+        .slide-user-quote .speech-bubble:hover::after {
+            border-top-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .slide-user-quote .bubble-tag {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .slide-user-quote .bubble-text {
+            font-size: 32px;
+            font-style: italic;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-white);
+        }
+        
+        .slide-user-quote .quote-marks {
+            color: rgba(255, 107, 53, 0.4);
+            font-size: 40px;
+            line-height: 0;
+            vertical-align: -10px;
+            margin: 0 5px;
+        }
+
+        .slide-user-quote .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .slide-user-quote .user-avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--card-blue);
+            border: 2px solid var(--border-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: var(--text-dim);
+        }
+
+        .slide-user-quote .user-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .slide-user-quote .user-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-white);
+        }
+
+        .slide-user-quote .user-role {
+            font-size: 18px;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">User Feedback</h1>
+        
+        <div class="quote-container">
+            <div class="speech-bubble">
+                <span class="bubble-tag"><i class="fa-solid fa-comment"></i> Beta Tester Feedback</span>
+                <div class="bubble-text">
+                    <span class="quote-marks">"</span>The new automated workflow saved our team literally hours of manual data entry every single week. It's completely transformed how we operate.<span class="quote-marks">"</span>
+                </div>
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Alex Johnson</span>
+                    <span class="user-role">Operations Manager, TechCorp</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

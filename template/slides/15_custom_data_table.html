@@ -1,0 +1,148 @@
+<!-- SLIDE 14: CUSTOM DATA TABLE -->
+<div class="slide slide-data-table" id="slide-13" aria-label="Slide 14: Custom Data Table">
+    <style>
+        .slide-data-table .content-wrapper {
+            justify-content: flex-start;
+        }
+
+        .slide-data-table .table-container {
+            width: 100%;
+            margin-top: 20px;
+            background: rgba(20, 33, 61, 0.4);
+            border: 1px solid var(--border-blue);
+            border-radius: 16px;
+            overflow: hidden; /* ensures border radius applies to table */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-data-table table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .slide-data-table th {
+            background-color: rgba(10, 17, 40, 0.8);
+            color: var(--accent-orange);
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 20px 24px;
+            border-bottom: 2px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .slide-data-table td {
+            padding: 20px 24px;
+            font-size: 19px;
+            color: var(--text-white);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background-color 0.2s ease;
+        }
+        
+        .slide-data-table tbody tr {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .slide-data-table tbody tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .slide-data-table tbody tr:hover {
+            background-color: rgba(255, 107, 53, 0.05);
+            transform: scale(1.005);
+            cursor: default;
+        }
+
+        .slide-data-table .text-right {
+            text-align: right;
+        }
+        
+        .slide-data-table .text-dim {
+            color: #F1F5F9;
+        }
+
+        .slide-data-table .status-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .slide-data-table .status-active {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10B981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .slide-data-table .status-pending {
+            background: rgba(245, 158, 11, 0.15);
+            color: #F59E0B;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .slide-data-table .status-error {
+            background: rgba(239, 68, 68, 0.15);
+            color: #EF4444;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">System Performance Metrics</h1>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Node Name</th>
+                        <th>Region</th>
+                        <th>Uptime</th>
+                        <th>Status</th>
+                        <th class="text-right">Avg Latency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>API Gateway Alpha</strong></td>
+                        <td class="text-dim">us-east-1</td>
+                        <td>99.99%</td>
+                        <td><span class="status-badge status-active">Operational</span></td>
+                        <td class="text-right">42ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Auth Service Core</strong></td>
+                        <td class="text-dim">us-east-2</td>
+                        <td>99.95%</td>
+                        <td><span class="status-badge status-active">Operational</span></td>
+                        <td class="text-right">65ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Data Analytics Worker</strong></td>
+                        <td class="text-dim">eu-central-1</td>
+                        <td>98.20%</td>
+                        <td><span class="status-badge status-pending">Degraded</span></td>
+                        <td class="text-right">180ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Search Index Cluster</strong></td>
+                        <td class="text-dim">ap-southeast-1</td>
+                        <td>99.50%</td>
+                        <td><span class="status-badge status-active">Operational</span></td>
+                        <td class="text-right">120ms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Legacy Payment Gateway</strong></td>
+                        <td class="text-dim">us-west-1</td>
+                        <td>85.00%</td>
+                        <td><span class="status-badge status-error">Offline</span></td>
+                        <td class="text-right text-dim">N/A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

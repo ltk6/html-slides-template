@@ -1,0 +1,166 @@
+<!-- SLIDE 12: CODE SNIPPET AND FORMULA -->
+<div class="slide slide-code-formula" id="slide-11" aria-label="Slide 12: Code Snippet and Formula">
+    <style>
+        .slide-code-formula .content-wrapper {
+            justify-content: center;
+        }
+
+        .slide-code-formula .layout-split {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+            flex-grow: 1;
+            margin-top: 10px;
+        }
+
+        .slide-code-formula .formula-box {
+            background: rgba(5, 8, 22, 0.6);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .slide-code-formula .formula-label {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .slide-code-formula .formula-vars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .slide-code-formula .var-badge {
+            background: rgba(255, 107, 53, 0.15);
+            border: 1px solid rgba(255, 107, 53, 0.5);
+            color: var(--accent-orange);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: 800;
+            font-family: monospace;
+            box-shadow: inset 0 0 10px rgba(255, 107, 53, 0.1);
+        }
+
+        .slide-code-formula .var-operator {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 700;
+        }
+
+        .slide-code-formula .code-editor {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide-code-formula .editor-header {
+            background: #161b22;
+            padding: 10px 16px;
+            border-bottom: 1px solid #30363d;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .slide-code-formula .mac-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .slide-code-formula .filename {
+            margin-left: 10px;
+            color: #8b949e;
+            font-size: 14px;
+            font-family: monospace;
+        }
+
+        .slide-code-formula .code-content {
+            padding: 20px;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #c9d1d9;
+            overflow-x: auto;
+        }
+
+        /* Basic Syntax Highlighting */
+        .slide-code-formula .kw { color: #ff7b72; font-weight: bold; } /* Keyword */
+        .slide-code-formula .fn { color: #d2a8ff; } /* Function */
+        .slide-code-formula .st { color: #a5d6ff; } /* String */
+        .slide-code-formula .cm { color: #8b949e; font-style: italic; } /* Comment */
+        .slide-code-formula .op { color: #79c0ff; } /* Operator */
+
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Dynamic Weighting Algorithm</h1>
+        
+        <div class="layout-split">
+            
+            <!-- Left Side: Explanation & Formula -->
+            <div style="display: flex; flex-direction: column; gap: 30px;">
+                <p style="font-size: 21px; color: var(--text-white); line-height: 1.5;">
+                    Our algorithm dynamically adjusts the relevance score based on contextual parameters. This ensures that edge cases are handled gracefully without manual intervention.
+                </p>
+                
+                <div class="formula-box">
+                    <span class="formula-label">Final Score Calculation</span>
+                    <div class="formula-vars">
+                        <span class="var-badge">base_score</span>
+                        <span class="var-operator">×</span>
+                        <span class="var-badge">(1 + context_modifier)</span>
+                    </div>
+                </div>
+
+                <ul class="bullet-list">
+                    <li><strong>base_score:</strong> Initial ranking from the semantic search engine.</li>
+                    <li><strong>context_modifier:</strong> A dynamic float between -0.5 and +0.5 based on real-time user intent signals.</li>
+                </ul>
+            </div>
+
+            <!-- Right Side: Code Snippet -->
+            <div class="code-editor">
+                <div class="editor-header">
+                    <div class="mac-dot" style="background: #ff5f56;"></div>
+                    <div class="mac-dot" style="background: #ffbd2e;"></div>
+                    <div class="mac-dot" style="background: #27c93f;"></div>
+                    <span class="filename">ranker.py</span>
+                </div>
+                <pre class="code-content"><code><span class="kw">def</span> <span class="fn">calculate_dynamic_score</span>(base_score, intent_signals):
+    <span class="cm"># Initialize modifier</span>
+    modifier <span class="op">=</span> <span class="op">0.0</span>
+    
+    <span class="cm"># Adjust based on strong semantic matches</span>
+    <span class="kw">if</span> intent_signals.get(<span class="st">"exact_match"</span>):
+        modifier <span class="op">+=</span> <span class="op">0.25</span>
+        
+    <span class="cm"># Penalize stale data</span>
+    <span class="kw">if</span> intent_signals.get(<span class="st">"data_age_days"</span>) <span class="op">></span> <span class="op">30</span>:
+        modifier <span class="op">-=</span> <span class="op">0.15</span>
+        
+    <span class="cm"># Clamp the modifier to allowed range</span>
+    final_mod <span class="op">=</span> <span class="fn">max</span>(<span class="op">-0.5</span>, <span class="fn">min</span>(<span class="op">0.5</span>, modifier))
+    
+    <span class="kw">return</span> base_score <span class="op">*</span> (<span class="op">1.0</span> <span class="op">+</span> final_mod)</code></pre>
+            </div>
+
+        </div>
+    </div>
+</div>

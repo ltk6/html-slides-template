@@ -1,0 +1,308 @@
+<!-- SLIDE 8: N4 RANKING & DYNAMIC WEIGHTING -->
+<div class="slide slide-ranking" id="slide-7" aria-label="Trang 8: Xếp hạng N4 và Trọng số động">
+    <style>
+        .slide-ranking .ranking-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-grow: 1;
+            margin-top: 20px;
+            height: calc(100% - 90px);
+            box-sizing: border-box;
+        }
+
+        .slide-ranking .ranking-col {
+            flex: 1;
+            background-color: rgba(10, 17, 40, 0.4);
+            border: 1px solid var(--border-blue);
+            border-radius: 16px;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            height: 480px;
+            box-sizing: border-box;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .slide-ranking .ranking-col:hover {
+            border-color: rgba(255, 107, 53, 0.35);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .slide-ranking .ranking-col.highlighted {
+            border: 2px solid rgba(255, 107, 53, 0.45);
+            background-color: rgba(255, 107, 53, 0.02);
+        }
+
+        .slide-ranking .ranking-col .col-header {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 0;
+        }
+
+        .slide-ranking .col-header.orange {
+            color: var(--accent-orange);
+            border-bottom-color: rgba(255, 107, 53, 0.2);
+        }
+
+        .slide-ranking .col-header.green {
+            color: #10B981;
+            border-bottom-color: rgba(16, 185, 129, 0.2);
+        }
+
+        .slide-ranking .flow-arrow {
+            font-size: 34px;
+            color: var(--accent-orange);
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 30px;
+        }
+
+        .slide-ranking .semantic-channels {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            height: 100%;
+            justify-content: center;
+        }
+
+        .slide-ranking .channel-card {
+            background-color: var(--card-blue);
+            border: 1px solid var(--dim-blue);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .slide-ranking .channel-card:hover {
+            border-color: rgba(255, 107, 53, 0.25);
+            background-color: rgba(255, 107, 53, 0.04);
+        }
+
+        .slide-ranking .channel-icon {
+            font-size: 20px;
+            color: var(--accent-orange);
+            background-color: rgba(255, 107, 53, 0.08);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .slide-ranking .channel-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin: 0;
+        }
+
+        .slide-ranking .weight-calculator-card {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            height: 100%;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .slide-ranking .calc-formula {
+            background-color: rgba(5, 8, 22, 0.6);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .slide-ranking .formula-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .slide-ranking .formula-vars {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .slide-ranking .var-badge {
+            background-color: rgba(255, 107, 53, 0.15);
+            border: 1px solid rgba(255, 107, 53, 0.4);
+            color: var(--accent-orange);
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 800;
+            font-family: monospace;
+        }
+
+        .slide-ranking .var-plus {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 700;
+        }
+
+        .slide-ranking .weight-scenarios {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .slide-ranking .scenario-item {
+            background-color: rgba(5, 8, 22, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 14px 18px;
+        }
+
+        .slide-ranking .scenario-condition {
+            color: var(--text-white);
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .slide-ranking .scenario-action {
+            color: #E2E8F0;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .slide-ranking .scenario-action strong {
+            color: var(--accent-orange);
+        }
+
+        .slide-ranking .adaptive-outcome-card {
+            background-color: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 16px;
+            padding: 40px 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 22px;
+            margin: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .slide-ranking .adaptive-outcome-card:hover {
+            border-color: #10B981;
+            background-color: rgba(16, 185, 129, 0.08);
+            transform: scale(1.02);
+        }
+
+        .slide-ranking .outcome-shield {
+            font-size: 48px;
+            color: #10B981;
+            background-color: rgba(16, 185, 129, 0.15);
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.45);
+        }
+
+        .slide-ranking .outcome-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-white);
+            margin: 0 0 6px 0;
+        }
+
+        .slide-ranking .outcome-desc {
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text-white);
+            margin: 0;
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Xếp hạng địa điểm — Trọng số Động</h1>
+        <div class="ranking-layout">
+            <div class="ranking-col">
+                <div class="col-header"><i class="fa-solid fa-network-wired"></i> 4 Góc Độ Song Song</div>
+                <div class="semantic-channels">
+                    <div class="channel-card">
+                        <div class="channel-icon"><i class="fa-solid fa-comment-dots"></i></div>
+                        <div class="channel-title">Text trực tiếp</div>
+                    </div>
+                    <div class="channel-card">
+                        <div class="channel-icon"><i class="fa-solid fa-arrows-to-eye"></i></div>
+                        <div class="channel-title">Text mở rộng</div>
+                    </div>
+                    <div class="channel-card">
+                        <div class="channel-icon"><i class="fa-solid fa-tags"></i></div>
+                        <div class="channel-title">Tags mở rộng</div>
+                    </div>
+                    <div class="channel-card">
+                        <div class="channel-icon"><i class="fa-solid fa-image"></i></div>
+                        <div class="channel-title">Ảnh bạn gửi</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="ranking-col highlighted">
+                <div class="col-header orange"><i class="fa-solid fa-sliders"></i> Trọng Số Động</div>
+                <div class="weight-calculator-card">
+                    <div class="calc-formula">
+                        <span class="formula-label">Trích từ đầu vào:</span>
+                        <div class="formula-vars"><span class="var-badge">text_k</span><span
+                                class="var-plus">+</span><span class="var-badge">tags_k</span></div>
+                    </div>
+                    <div class="weight-scenarios">
+                        <div class="scenario-item">
+                            <div class="scenario-condition">Ít text_k</div>
+                            <div class="scenario-action">➡️ Tăng trọng số <strong>aug_text</strong></div>
+                        </div>
+                        <div class="scenario-item">
+                            <div class="scenario-condition">Nhiều text_k</div>
+                            <div class="scenario-action">➡️ Tăng trọng số <strong>text</strong></div>
+                        </div>
+                        <div class="scenario-item">
+                            <div class="scenario-condition">Nhiều tags_k</div>
+                            <div class="scenario-action">➡️ Tăng trọng số <strong>tags</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="ranking-col">
+                <div class="col-header green"><i class="fa-solid fa-circle-check"></i> Kết Quả Thực Tế</div>
+                <div class="adaptive-outcome-card">
+                    <div class="outcome-shield"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="outcome-title">Tự động thích nghi</div>
+                    <p class="outcome-desc">Trình xếp hạng không bị "mù" — tự thích nghi đối với dữ liệu thực tế của mỗi
+                        truy vấn độc lập.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

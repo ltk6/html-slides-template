@@ -1,0 +1,165 @@
+<!-- SLIDE 15: TEAM PROFILES -->
+<div class="slide slide-team" id="slide-14" aria-label="Slide 15: Team Profiles">
+    <style>
+        .slide-team .content-wrapper {
+            justify-content: center;
+        }
+
+        .slide-team .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            flex-grow: 1;
+            margin-top: 15px;
+            align-items: stretch;
+        }
+
+        .slide-team .profile-card {
+            background-color: rgba(20, 33, 61, 0.4);
+            border: 1px solid var(--border-blue);
+            border-radius: 16px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .slide-team .profile-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 107, 53, 0.4);
+            background-color: rgba(20, 33, 61, 0.7);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .slide-team .avatar-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            position: relative;
+            background: linear-gradient(135deg, var(--card-blue), rgba(255, 107, 53, 0.1));
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: var(--text-dim);
+            transition: border-color 0.3s ease;
+        }
+
+        .slide-team .profile-card:hover .avatar-container {
+            border-color: var(--accent-orange);
+        }
+
+        .slide-team .name {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 5px;
+        }
+
+        .slide-team .role {
+            font-size: 16px;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .slide-team .bio {
+            font-size: 16px;
+            color: #F1F5F9;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .slide-team .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .slide-team .social-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .slide-team .social-icon:hover {
+            background: var(--accent-orange);
+            color: #0A1128;
+            transform: scale(1.1);
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Meet The Core Team</h1>
+        
+        <div class="team-grid">
+            
+            <div class="profile-card">
+                <div class="avatar-container">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div class="name">Sarah Jenkins</div>
+                <div class="role">CEO & Founder</div>
+                <div class="bio">15+ years experience in enterprise architecture and scaling tech startups from seed to IPO.</div>
+                <div class="social-links">
+                    <div class="social-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="social-icon"><i class="fa-brands fa-twitter"></i></div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="avatar-container">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="name">David Chen</div>
+                <div class="role">CTO</div>
+                <div class="bio">Former principal engineer at Google. Passionate about distributed systems and cloud infrastructure.</div>
+                <div class="social-links">
+                    <div class="social-icon"><i class="fa-brands fa-github"></i></div>
+                    <div class="social-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="avatar-container">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <div class="name">Elena Rodriguez</div>
+                <div class="role">Head of Design</div>
+                <div class="bio">Award-winning UX/UI designer focused on creating accessible and delightful user experiences.</div>
+                <div class="social-links">
+                    <div class="social-icon"><i class="fa-brands fa-dribbble"></i></div>
+                    <div class="social-icon"><i class="fa-brands fa-behance"></i></div>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="avatar-container">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <div class="name">Marcus Wright</div>
+                <div class="role">VP of Product</div>
+                <div class="bio">Data-driven product leader with a track record of launching successful B2B SaaS platforms.</div>
+                <div class="social-links">
+                    <div class="social-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                    <div class="social-icon"><i class="fa-solid fa-envelope"></i></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

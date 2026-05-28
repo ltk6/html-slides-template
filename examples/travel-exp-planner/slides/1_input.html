@@ -1,0 +1,156 @@
+<!-- 
+SPEAKER SCRIPT (45 giây):
+"Bạn có ba cách để nói với hệ thống những gì bạn muốn:
+Cách 1: Chọn Tags (Nhanh & dễ)
+Chọn những từ có sẵn: 'Yên tĩnh', 'Thiên nhiên', 'Gia đình', 'Phiêu lưu'
+Giống như bấm nút lựa chọn
+Tốt khi bạn biết khó có thể diễn tả bạn muốn gì.
+Cách 2: Viết Mô Tả (Chi tiết & sâu)
+Viết: 'Tôi muốn biển yên tĩnh, tránh đám đông, ngắm hoàng hôn'
+Viết tự do, bao nhiêu từ cũng được
+Tốt khi bạn muốn cung cấp thông tin chi tiết hơn hoặc thông tin hoàn toàn trừu tượng.
+Cách 3: Gửi Ảnh (Trực quan)
+Upload ảnh về cảnh bạn thích
+Không cần nói gì
+Tốt khi khung cảnh bạn mong muốn khó có thể diễn tả bằng lời
+Điểm quan trọng: Bạn có thể dùng một cách, hoặc trộn lẫn cả ba cách. Hệ thống sẽ hiểu tất cả."
+-->
+<!-- SLIDE 1: MULTIMODAL INPUT DEEP DIVE -->
+<div class="slide slide-multimodal active" id="slide-0" aria-label="Trang 1: Ba cách để nói chuyện với hệ thống">
+    <style>
+        .slide-multimodal .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            flex-grow: 1;
+        }
+
+        .slide-multimodal .card {
+            background-color: var(--card-blue);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--dim-blue);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
+        }
+
+        .slide-multimodal .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-orange);
+        }
+
+        .slide-multimodal .icon-circle {
+            width: 56px;
+            height: 56px;
+            background-color: var(--accent-orange);
+            color: var(--bg-dark-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 22px;
+        }
+
+        .slide-multimodal .tagline {
+            font-size: 15.5px;
+            margin-bottom: 10px;
+        }
+
+        .slide-multimodal .input-title {
+            font-size: 25px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .slide-multimodal .input-desc {
+            font-size: 19.5px;
+            line-height: 1.55;
+            color: #E2E8F0;
+            margin-bottom: 18px;
+        }
+
+        .slide-multimodal .example-text {
+            font-size: 17px;
+            color: #E2E8F0;
+        }
+    </style>
+
+    <div class="content-wrapper">
+        <h1 class="main-title">Ba Cách Để Nói Chuyện Với Hệ Thống</h1>
+
+        <div class="grid-container">
+            <!-- Cách 1: Chọn Tags -->
+            <div class="card">
+                <div class="icon-circle"><i class="fa-solid fa-tags"></i></div>
+                <span class="tagline">Cách 1: Chọn Tags</span>
+                <h2 class="input-title">Nhanh & Dễ</h2>
+                <div class="tag-preview-group" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px;">
+                    <span
+                        style="background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.3); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 13.5px; font-weight: 600;"><i
+                            class="fa-solid fa-leaf" style="color: var(--accent-orange); margin-right: 4px;"></i> Yên
+                        tĩnh</span>
+                    <span
+                        style="background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.3); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 13.5px; font-weight: 600;"><i
+                            class="fa-solid fa-tree" style="color: var(--accent-orange); margin-right: 4px;"></i> Thiên
+                        nhiên</span>
+                    <span
+                        style="background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.3); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 13.5px; font-weight: 600;"><i
+                            class="fa-solid fa-users" style="color: var(--accent-orange); margin-right: 4px;"></i> Gia
+                        đình</span>
+                    <span
+                        style="background: rgba(255, 107, 53, 0.1); border: 1px solid rgba(255, 107, 53, 0.3); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 13.5px; font-weight: 600;"><i
+                            class="fa-solid fa-compass" style="color: var(--accent-orange); margin-right: 4px;"></i>
+                        Phiêu lưu</span>
+                </div>
+                <p class="input-desc" style="margin-bottom: 12px; font-size: 18.5px; line-height: 1.55;">Giống như bấm
+                    nút lựa chọn từ danh sách từ khóa có sẵn.</p>
+                <div class="example-box" style="margin-top: auto;">
+                    <span class="example-label">Tốt khi</span>
+                    <p class="example-text" style="font-size: 16px;">Bạn chưa định hình rõ hoặc khó tự diễn tả mong muốn
+                        của mình.</p>
+                </div>
+            </div>
+
+            <!-- Cách 2: Viết Mô Tả -->
+            <div class="card">
+                <div class="icon-circle"><i class="fa-solid fa-pen-fancy"></i></div>
+                <span class="tagline">Cách 2: Viết Mô Tả</span>
+                <h2 class="input-title">Chi Tiết & Sâu</h2>
+                <div class="desc-preview-box"
+                    style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 10px 14px; border-radius: 8px; font-style: italic; color: #E2E8F0; margin-bottom: 15px; font-size: 14.5px; line-height: 1.4;">
+                    "Tôi muốn biển yên tĩnh, tránh đám đông, ngắm hoàng hôn..."
+                </div>
+                <p class="input-desc" style="margin-bottom: 12px; font-size: 18.5px; line-height: 1.55;">Viết tự do,
+                    nhập thông tin mô tả chi tiết không giới hạn độ dài.</p>
+                <div class="example-box" style="margin-top: auto;">
+                    <span class="example-label">Tốt khi</span>
+                    <p class="example-text" style="font-size: 16px;">Muốn cung cấp thông tin chi tiết hoặc thông tin
+                        hoàn toàn trừu tượng.</p>
+                </div>
+            </div>
+
+            <!-- Cách 3: Gửi Ảnh -->
+            <div class="card">
+                <div class="icon-circle"><i class="fa-solid fa-image"></i></div>
+                <span class="tagline">Cách 3: Gửi Ảnh</span>
+                <h2 class="input-title">Trực Quan</h2>
+                <div class="upload-preview-box"
+                    style="border: 2px dashed rgba(255, 107, 53, 0.3); background: rgba(255, 107, 53, 0.02); border-radius: 8px; padding: 15px; text-align: center; color: var(--text-dim); margin-bottom: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;">
+                    <i class="fa-solid fa-cloud-arrow-up" style="font-size: 24px; color: var(--accent-orange);"></i>
+                    <span style="font-size: 12.5px; font-weight: 600; color: #E2E8F0;">Tải hình ảnh truyền cảm
+                        hứng</span>
+                </div>
+                <p class="input-desc" style="margin-bottom: 12px; font-size: 18.5px; line-height: 1.55;">Chỉ cần tải lên
+                    hình ảnh về khung cảnh bạn thích mà không cần mô tả thêm.</p>
+                <div class="example-box" style="margin-top: auto;">
+                    <span class="example-label">Tốt khi</span>
+                    <p class="example-text" style="font-size: 16px;">Khung cảnh bạn mong muốn quá khó diễn tả trọn vẹn
+                        bằng từ ngữ.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

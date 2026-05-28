@@ -1,0 +1,158 @@
+<!-- SLIDE 3: PROBLEM VS SOLUTION -->
+<div class="slide slide-problem-solution" id="slide-2" aria-label="Slide 3: Problem vs Solution">
+    <style>
+        .slide-problem-solution .content-wrapper {
+            justify-content: center;
+        }
+
+        .slide-problem-solution .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            flex-grow: 1;
+            margin-top: 10px;
+            align-items: stretch;
+        }
+
+        .slide-problem-solution .compare-card {
+            background: rgba(20, 33, 61, 0.4);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .slide-problem-solution .compare-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .slide-problem-solution .problem-card {
+            border-color: rgba(239, 68, 68, 0.2);
+            background: linear-gradient(180deg, rgba(239, 68, 68, 0.05) 0%, rgba(20, 33, 61, 0.4) 100%);
+        }
+
+        .slide-problem-solution .solution-card {
+            border-color: rgba(16, 185, 129, 0.3);
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.08) 0%, rgba(20, 33, 61, 0.4) 100%);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.05);
+        }
+
+        .slide-problem-solution .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 26px;
+            font-weight: 800;
+        }
+
+        .slide-problem-solution .problem-card .card-header {
+            color: #EF4444;
+        }
+
+        .slide-problem-solution .solution-card .card-header {
+            color: #10B981;
+        }
+
+        .slide-problem-solution .icon-badge {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .slide-problem-solution .problem-card .icon-badge {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .slide-problem-solution .solution-card .icon-badge {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .slide-problem-solution .point-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .slide-problem-solution .point-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 20px;
+            color: #E2E8F0;
+            line-height: 1.45;
+        }
+
+        .slide-problem-solution .point-icon {
+            margin-top: 4px;
+            font-size: 18px;
+        }
+
+        .slide-problem-solution .problem-card .point-icon {
+            color: rgba(239, 68, 68, 0.8);
+        }
+
+        .slide-problem-solution .solution-card .point-icon {
+            color: rgba(16, 185, 129, 0.8);
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Problem vs Solution</h1>
+        
+        <div class="compare-grid">
+            <div class="compare-card problem-card">
+                <div class="card-header">
+                    <div class="icon-badge"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    The Challenge
+                </div>
+                <div class="point-list">
+                    <div class="point-item">
+                        <i class="fa-solid fa-xmark point-icon"></i>
+                        <div><strong>Manual Effort:</strong> Highly repetitive tasks taking away from core value creation.</div>
+                    </div>
+                    <div class="point-item">
+                        <i class="fa-solid fa-xmark point-icon"></i>
+                        <div><strong>Error Prone:</strong> Increased likelihood of human error in data processing.</div>
+                    </div>
+                    <div class="point-item">
+                        <i class="fa-solid fa-xmark point-icon"></i>
+                        <div><strong>Slow Turnaround:</strong> Long wait times affecting end-user satisfaction.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="compare-card solution-card">
+                <div class="card-header">
+                    <div class="icon-badge"><i class="fa-solid fa-circle-check"></i></div>
+                    The Solution
+                </div>
+                <div class="point-list">
+                    <div class="point-item">
+                        <i class="fa-solid fa-check point-icon"></i>
+                        <div><strong>Automated Workflows:</strong> End-to-end automation of repetitive tasks.</div>
+                    </div>
+                    <div class="point-item">
+                        <i class="fa-solid fa-check point-icon"></i>
+                        <div><strong>High Accuracy:</strong> Standardized processing ensures consistent, error-free results.</div>
+                    </div>
+                    <div class="point-item">
+                        <i class="fa-solid fa-check point-icon"></i>
+                        <div><strong>Real-time Speed:</strong> Instant feedback and drastically reduced wait times.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

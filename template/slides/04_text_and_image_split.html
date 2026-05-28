@@ -1,0 +1,57 @@
+<!-- SLIDE 2: TWO COLUMN -->
+<div class="slide slide-two-column" id="slide-1" aria-label="Slide 2: Two Column Layout">
+    <style>
+        .slide-two-column .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            flex-grow: 1;
+            align-items: center;
+        }
+
+        .slide-two-column .text-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .slide-two-column .image-placeholder {
+            background-color: var(--card-blue);
+            border: 1px dashed var(--border-blue);
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            font-size: 24px;
+            font-weight: 700;
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Two Column Layout</h1>
+        
+        <div class="two-col">
+            <div class="text-content">
+                <span class="tagline">KEY HIGHLIGHTS</span>
+                <p style="font-size: 22px; color: var(--text-white); line-height: 1.5;">
+                    This is a standard two-column layout. Use this when you need to juxtapose explanatory text with a diagram, image, or code snippet.
+                </p>
+                <ul class="bullet-list">
+                    <li><strong>Flexible grid:</strong> Easily adjust the <code>grid-template-columns</code> to <code>1.5fr 1fr</code> for wider text.</li>
+                    <li><strong>Responsive gaps:</strong> The gap is set to 40px for comfortable spacing.</li>
+                    <li><strong>Vertical alignment:</strong> Items are vertically centered by default.</li>
+                </ul>
+            </div>
+            
+            <div class="image-placeholder">
+                <i class="fa-solid fa-image" style="margin-right: 15px;"></i> Visual Asset Placeholder
+            </div>
+        </div>
+
+        <div class="system-outcome-box">
+            <div class="outcome-label">BEST PRACTICE</div>
+            <div class="outcome-text">Keep text concise and let the visual asset on the right do the heavy lifting.</div>
+        </div>
+    </div>
+</div>

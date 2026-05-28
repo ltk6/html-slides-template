@@ -1,0 +1,126 @@
+<!-- SLIDE 11: THREE COLUMN FEATURE CARDS -->
+<div class="slide slide-feature-cards" id="slide-10" aria-label="Slide 11: Three Column Feature Cards">
+    <style>
+        .slide-feature-cards .content-wrapper {
+            justify-content: center;
+        }
+
+        .slide-feature-cards .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            flex-grow: 1;
+            margin-top: 20px;
+            align-items: stretch;
+        }
+
+        .slide-feature-cards .card {
+            background-color: var(--card-blue);
+            border: 1px solid var(--border-blue);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .slide-feature-cards .card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-orange);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.08);
+        }
+
+        .slide-feature-cards .icon-circle {
+            width: 56px;
+            height: 56px;
+            background-color: var(--accent-orange);
+            color: var(--bg-dark-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 22px;
+            transition: transform 0.3s ease;
+        }
+
+        .slide-feature-cards .card:hover .icon-circle {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .slide-feature-cards .card-title {
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-white);
+        }
+
+        .slide-feature-cards .card-body {
+            font-size: 19px;
+            color: #E2E8F0;
+            line-height: 1.55;
+            margin-bottom: 20px;
+        }
+
+        /* Modifier for different color schemes on cards */
+        .slide-feature-cards .card.cyan-card:hover {
+            border-color: #00F0FF;
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.08);
+        }
+        .slide-feature-cards .card.cyan-card .icon-circle {
+            background-color: #00F0FF;
+        }
+        .slide-feature-cards .card.cyan-card .tagline {
+            color: #00F0FF;
+        }
+
+        .slide-feature-cards .card.green-card:hover {
+            border-color: #10B981;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.08);
+        }
+        .slide-feature-cards .card.green-card .icon-circle {
+            background-color: #10B981;
+        }
+        .slide-feature-cards .card.green-card .tagline {
+            color: #10B981;
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Core Platform Pillars</h1>
+        
+        <div class="grid-3">
+            <div class="card">
+                <div class="icon-circle"><i class="fa-solid fa-rocket"></i></div>
+                <span class="tagline">Performance</span>
+                <h2 class="card-title">Lightning Fast</h2>
+                <p class="card-body">Optimized rendering engine delivers 60fps animations and sub-100ms response times for all user interactions.</p>
+                <div class="example-box">
+                    <span class="example-label">Impact</span>
+                    <p class="example-text">30% increase in user retention.</p>
+                </div>
+            </div>
+            
+            <div class="card cyan-card">
+                <div class="icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
+                <span class="tagline">Security</span>
+                <h2 class="card-title">Enterprise Grade</h2>
+                <p class="card-body">End-to-end encryption, regular penetration testing, and fully compliant with SOC2 and GDPR standards.</p>
+                <div class="example-box" style="background-color: rgba(0, 240, 255, 0.07); border-color: rgba(0, 240, 255, 0.3);">
+                    <span class="example-label" style="color: #00F0FF;">Impact</span>
+                    <p class="example-text">Zero data breaches since launch.</p>
+                </div>
+            </div>
+            
+            <div class="card green-card">
+                <div class="icon-circle"><i class="fa-solid fa-leaf"></i></div>
+                <span class="tagline">Scalability</span>
+                <h2 class="card-title">Infinitely Scalable</h2>
+                <p class="card-body">Built on an elastic cloud infrastructure that automatically provisions resources based on real-time demand.</p>
+                <div class="example-box" style="background-color: rgba(16, 185, 129, 0.07); border-color: rgba(16, 185, 129, 0.3);">
+                    <span class="example-label" style="color: #10B981;">Impact</span>
+                    <p class="example-text">Handles 10M+ daily active users seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

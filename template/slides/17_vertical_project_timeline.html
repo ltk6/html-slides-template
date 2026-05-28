@@ -1,0 +1,144 @@
+<!-- SLIDE 5: TIMELINE STEPS -->
+<div class="slide slide-timeline" id="slide-4" aria-label="Slide 5: Timeline Steps">
+    <style>
+        .slide-timeline .content-wrapper {
+            justify-content: flex-start;
+        }
+
+        .slide-timeline .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+            position: relative;
+        }
+
+        /* Connecting vertical line */
+        .slide-timeline .timeline::before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: rgba(255, 107, 53, 0.3);
+            z-index: 0;
+        }
+
+        .slide-timeline .timeline-step {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: rgba(20, 33, 61, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 12px 20px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .slide-timeline .timeline-step:hover {
+            transform: translateX(8px);
+            border-color: rgba(255, 107, 53, 0.4);
+            background: rgba(20, 33, 61, 0.7);
+        }
+
+        .slide-timeline .step-num {
+            background: var(--accent-orange);
+            color: #0A1128;
+            font-weight: 800;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 4px rgba(10, 17, 40, 0.8);
+        }
+
+        .slide-timeline .step-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .slide-timeline .step-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .slide-timeline .step-desc {
+            font-size: 16px;
+            color: var(--text-dim);
+            line-height: 1.4;
+        }
+        
+        .slide-timeline .step-badge {
+            margin-left: auto;
+            background: rgba(0, 240, 255, 0.1);
+            color: #00F0FF;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Implementation Timeline</h1>
+        
+        <div class="timeline">
+            <div class="timeline-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <span class="step-title">Discovery & Planning</span>
+                    <span class="step-desc">Gather requirements, define scope, and establish project milestones.</span>
+                </div>
+                <span class="step-badge">Week 1-2</span>
+            </div>
+            
+            <div class="timeline-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <span class="step-title">Design & Prototyping</span>
+                    <span class="step-desc">Create wireframes, UI mockups, and interactive prototypes for validation.</span>
+                </div>
+                <span class="step-badge">Week 3-4</span>
+            </div>
+            
+            <div class="timeline-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <span class="step-title">Core Development</span>
+                    <span class="step-desc">Implement backend infrastructure and primary frontend components.</span>
+                </div>
+                <span class="step-badge" style="color: var(--accent-orange); border-color: rgba(255, 107, 53, 0.3); background: rgba(255, 107, 53, 0.1);">In Progress</span>
+            </div>
+            
+            <div class="timeline-step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                    <span class="step-title">Testing & QA</span>
+                    <span class="step-desc">Comprehensive unit, integration, and user acceptance testing.</span>
+                </div>
+                <span class="step-badge" style="color: var(--text-dim); border-color: rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.05);">Pending</span>
+            </div>
+            
+            <div class="timeline-step">
+                <div class="step-num"><i class="fa-solid fa-flag-checkered"></i></div>
+                <div class="step-content">
+                    <span class="step-title">Deployment & Launch</span>
+                    <span class="step-desc">Production release, monitoring setup, and handover.</span>
+                </div>
+                <span class="step-badge" style="color: var(--text-dim); border-color: rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.05);">Pending</span>
+            </div>
+        </div>
+
+    </div>
+</div>

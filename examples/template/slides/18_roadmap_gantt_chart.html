@@ -1,0 +1,173 @@
+<!-- SLIDE 18: ROADMAP GANTT CHART -->
+<div class="slide slide-roadmap" id="slide-18" aria-label="Slide 18: Roadmap Gantt Chart">
+    <style>
+        .slide-roadmap .content-wrapper {
+            justify-content: flex-start;
+        }
+
+        .slide-roadmap .gantt-container {
+            width: 100%;
+            margin-top: 20px;
+            background: rgba(20, 33, 61, 0.3);
+            border: 1px solid var(--border-blue);
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: 60px 1fr;
+        }
+
+        .slide-roadmap .gantt-header {
+            display: grid;
+            grid-template-columns: 200px repeat(4, 1fr);
+            background: rgba(10, 17, 40, 0.8);
+            border-bottom: 2px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .slide-roadmap .gantt-header-cell {
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .slide-roadmap .gantt-body {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        /* Vertical grid lines */
+        .slide-roadmap .gantt-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: 200px repeat(4, 1fr);
+            pointer-events: none;
+        }
+        
+        .slide-roadmap .gantt-grid-line {
+            border-right: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .slide-roadmap .gantt-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .slide-roadmap .gantt-row:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .slide-roadmap .row-label {
+            padding: 25px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-white);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .slide-roadmap .timeline-area {
+            position: relative;
+            padding: 15px 0;
+        }
+
+        /* Gantt Bars */
+        .slide-roadmap .gantt-bar {
+            position: absolute;
+            height: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #0A1128;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease;
+        }
+        
+        .slide-roadmap .gantt-bar:hover {
+            transform: translateY(-50%) scale(1.02);
+        }
+
+        .slide-roadmap .bar-orange { background: var(--accent-orange); }
+        .slide-roadmap .bar-cyan { background: #00F0FF; }
+        .slide-roadmap .bar-green { background: #10B981; }
+
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">2026 Product Roadmap</h1>
+        
+        <div class="gantt-container">
+            <!-- Header -->
+            <div class="gantt-header">
+                <div class="gantt-header-cell">Initiative</div>
+                <div class="gantt-header-cell">Q1</div>
+                <div class="gantt-header-cell">Q2</div>
+                <div class="gantt-header-cell" style="color: var(--accent-orange);">Q3 (Current)</div>
+                <div class="gantt-header-cell">Q4</div>
+            </div>
+            
+            <!-- Body -->
+            <div class="gantt-body">
+                <!-- Background Grid Lines -->
+                <div class="gantt-grid">
+                    <div class="gantt-grid-line"></div>
+                    <div class="gantt-grid-line"></div>
+                    <div class="gantt-grid-line"></div>
+                    <div class="gantt-grid-line" style="background: rgba(255,107,53,0.03);"></div>
+                    <div class="gantt-grid-line"></div>
+                </div>
+                
+                <!-- Rows -->
+                <div class="gantt-row">
+                    <div class="row-label">Core Platform</div>
+                    <div class="timeline-area">
+                        <!-- Spans Q1 to mid Q2 (left 0%, width 37.5%) -->
+                        <div class="gantt-bar bar-green" style="left: 2%; width: 35%;">v2.0 Migration</div>
+                    </div>
+                </div>
+
+                <div class="gantt-row">
+                    <div class="row-label">Security & Auth</div>
+                    <div class="timeline-area">
+                        <!-- Spans Q2 to Q3 (left 25%, width 50%) -->
+                        <div class="gantt-bar bar-cyan" style="left: 30%; width: 45%;">SSO Integration & SOC2 Audit</div>
+                    </div>
+                </div>
+
+                <div class="gantt-row">
+                    <div class="row-label">Data Analytics</div>
+                    <div class="timeline-area">
+                        <!-- Spans Q3 to mid Q4 (left 50%, width 37.5%) -->
+                        <div class="gantt-bar bar-orange" style="left: 55%; width: 35%;">Real-time Dashboards</div>
+                    </div>
+                </div>
+
+                <div class="gantt-row">
+                    <div class="row-label">Mobile App</div>
+                    <div class="timeline-area">
+                        <!-- Spans mid Q3 to end Q4 -->
+                        <div class="gantt-bar bar-cyan" style="left: 65%; width: 33%;">iOS Beta Release</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,191 @@
+<!-- SLIDE 11: N6 ACTIVITY RANKING -->
+<div class="slide slide-n6" id="slide-10" aria-label="Trang 11: Xếp hạng hoạt động N6">
+    <style>
+        .slide-n6 .content-wrapper {
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .slide-n6 .ranking-layout {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 40px;
+            width: 100%;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .slide-n6 .section-header {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-orange);
+        }
+
+        .slide-n6 .formula-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .slide-n6 .formula-card {
+            background: rgba(20, 33, 61, 0.4);
+            border: 1.5px solid rgba(255, 107, 53, 0.25);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .slide-n6 .formula-card:hover {
+            border-color: rgba(255, 107, 53, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .slide-n6 .formula-pct {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .slide-n6 .formula-title {
+            font-size: 23px;
+            font-weight: 800;
+            color: var(--text-white);
+            text-transform: uppercase;
+        }
+
+        .slide-n6 .formula-desc {
+            font-size: 19px;
+            color: #F1F5F9;
+            line-height: 1.45;
+            font-weight: 600;
+        }
+
+        .slide-n6 .example-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .slide-n6 .example-card {
+            background: rgba(20, 33, 61, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .slide-n6 .example-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateX(4px);
+        }
+
+        .slide-n6 .example-card.winner {
+            border-color: rgba(255, 107, 53, 0.3);
+            background: linear-gradient(135deg, rgba(20, 33, 61, 0.4) 0%, rgba(255, 107, 53, 0.05) 100%);
+        }
+
+        .slide-n6 .example-title {
+            font-size: 23px;
+            font-weight: 800;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .slide-n6 .example-title.red {
+            color: #EF4444;
+        }
+
+        .slide-n6 .example-title.orange {
+            color: var(--accent-orange);
+        }
+
+        .slide-n6 .example-desc {
+            font-size: 19px;
+            color: #F1F5F9;
+            line-height: 1.45;
+            font-weight: 600;
+        }
+
+        .slide-n6 .example-desc strong {
+            color: #E2E8F0;
+        }
+
+        .slide-n6 .system-outcome-box {
+            margin-top: 25px;
+            padding: 22px 30px;
+            border-color: rgba(255, 107, 53, 0.15) !important;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide-n6 .outcome-label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            color: var(--accent-orange);
+        }
+
+        .slide-n6 .outcome-text {
+            font-size: 29px;
+            font-weight: 800;
+            line-height: 1.4;
+            color: var(--text-white);
+        }
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title" style="margin-bottom: 24px;">Xếp Hạng Hoạt Động Theo Phong Cách (N6)</h1>
+        <div class="ranking-layout">
+            <div>
+                <div class="section-header"><i class="fa-solid fa-calculator"></i><span>Công thức xếp hạng
+                        (50/50)</span></div>
+                <div class="formula-grid">
+                    <div class="formula-card"><span class="formula-pct">50%</span><span
+                            class="formula-title">Semantic</span>
+                        <p class="formula-desc">Hoạt động liên quan trực tiếp chủ đề chuyến đi</p>
+                    </div>
+                    <div class="formula-card"><span class="formula-pct">50%</span><span
+                            class="formula-title">Attributes</span>
+                        <p class="formula-desc">Cường độ, mức vận động, tính xã hội hợp gu</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="section-header"><i class="fa-solid fa-code-compare"></i><span>Ví dụ thực tế</span></div>
+                <div class="example-container">
+                    <div class="example-card">
+                        <div class="example-title red"><i class="fa-solid fa-circle-xmark"></i><span>Hoạt động A: Quá
+                                mạo hiểm</span></div>
+                        <div class="example-desc">Đúng chủ đề nhưng <strong>quá sức</strong> (vượt ngưỡng vận động) ➡️
+                            <strong>Xếp hạng thấp</strong>.</div>
+                    </div>
+                    <div class="example-card winner">
+                        <div class="example-title orange"><i class="fa-solid fa-circle-check"></i><span>Hoạt động B: Phù
+                                hợp nhất</span></div>
+                        <div class="example-desc">Đúng chủ đề và <strong>hợp phong cách</strong> của bạn ➡️ <strong>Xếp
+                                hạng CAO</strong>.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="system-outcome-box">
+            <div class="outcome-label">ĐÚC KẾT XẾP HẠNG</div>
+            <div class="outcome-text">Hoạt động được sắp xếp chính xác theo cả chủ đề lẫn phong cách trải nghiệm.</div>
+        </div>
+    </div>
+</div>

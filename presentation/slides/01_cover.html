@@ -1,0 +1,107 @@
+<!-- SLIDE 01: STYLED COVER SLIDE
+     ─────────────────────────────────────────────────
+     PURPOSE : Opening slide — deck title, subtitle, author.
+     CLASS   : slide-cover  (namespaces all styles below)
+     ID      : slide-1      (used by engine for goToSlide)
+-->
+<div class="slide slide-cover active" id="slide-1" aria-label="Cover: [Deck Title]">
+    <style>
+        /* ── Scoped styles for this slide only ───────────── */
+        .slide-cover .content-wrapper {
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .slide-cover .cover-eyebrow {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .slide-cover .cover-title {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            color: var(--text-white);
+            max-width: 900px;
+        }
+
+        .slide-cover .cover-title span {
+            color: var(--accent-orange);
+        }
+
+        .slide-cover .cover-subtitle {
+            font-size: 26px;
+            font-weight: 500;
+            color: #F1F5F9;
+            max-width: 700px;
+            line-height: 1.5;
+        }
+
+        .slide-cover .cover-meta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .slide-cover .cover-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        .slide-cover .cover-meta-item i {
+            color: var(--accent-orange);
+        }
+
+        /* Decorative right-side glow orb */
+        .slide-cover .deco-orb {
+            position: absolute;
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+    </style>
+    <div class="content-wrapper">
+        <!-- Eyebrow label above title -->
+        <span class="cover-eyebrow">[Category / Series Label]</span>
+        <!-- Main deck title — use <span> to color-highlight a keyword -->
+        <h1 class="cover-title">
+            Your Deck Title <span>Here</span>
+        </h1>
+        <!-- One-liner subtitle -->
+        <p class="cover-subtitle">
+            A short, punchy subtitle that explains what this presentation is about.
+        </p>
+        <!-- Author / date / context meta row -->
+        <div class="cover-meta">
+            <div class="cover-meta-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Author Name</span>
+            </div>
+            <div class="cover-meta-item">
+                <i class="fa-solid fa-calendar"></i>
+                <span>Month Year</span>
+            </div>
+            <div class="cover-meta-item">
+                <i class="fa-solid fa-tag"></i>
+                <span>Context / Team</span>
+            </div>
+        </div>
+    </div>
+    <!-- Decorative element -->
+    <div class="deco-orb"></div>
+</div>

@@ -1,0 +1,148 @@
+<!-- SLIDE 10: ANIMATED TECH STACK -->
+<div class="slide slide-tech-stack" id="slide-10" aria-label="Slide 10: Animated Tech Stack">
+    <style>
+        .slide-tech-stack .content-wrapper {
+            justify-content: center;
+        }
+
+        .slide-tech-stack .stack-diagram {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-grow: 1;
+            margin-top: 20px;
+            padding: 0 40px;
+            position: relative;
+        }
+
+        .slide-tech-stack .stack-tier {
+            width: 250px;
+            height: 350px;
+            background: rgba(20, 33, 61, 0.6);
+            border: 2px solid var(--border-blue);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .slide-tech-stack .tier-icon {
+            font-size: 48px;
+            color: var(--text-white);
+            margin-bottom: 20px;
+        }
+
+        .slide-tech-stack .tier-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slide-tech-stack .tech-pills {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .slide-tech-stack .tech-pill {
+            background: rgba(10, 17, 40, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: monospace;
+            font-size: 16px;
+            color: #E2E8F0;
+        }
+
+        /* Animated connection lines */
+        .slide-tech-stack .connection-line {
+            position: absolute;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .slide-tech-stack .line-1 { left: 250px; width: 200px; }
+        .slide-tech-stack .line-2 { left: 700px; width: 200px; }
+
+        .slide-tech-stack .data-packet {
+            position: absolute;
+            top: 0;
+            left: -20px;
+            width: 40px;
+            height: 4px;
+            background: var(--accent-orange);
+            box-shadow: 0 0 15px var(--accent-orange), 0 0 30px var(--accent-orange);
+            animation: flow 2s linear infinite;
+        }
+        
+        .slide-tech-stack .line-2 .data-packet {
+            background: #00F0FF;
+            box-shadow: 0 0 15px #00F0FF, 0 0 30px #00F0FF;
+            animation: flow 2.5s linear infinite;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes flow {
+            0% { left: -40px; }
+            100% { left: 100%; }
+        }
+
+    </style>
+    <div class="content-wrapper">
+        <h1 class="main-title">Real-Time Data Pipeline</h1>
+        
+        <div class="stack-diagram">
+            
+            <!-- Connection Lines -->
+            <div class="connection-line line-1"><div class="data-packet"></div></div>
+            <div class="connection-line line-2"><div class="data-packet"></div></div>
+
+            <!-- Tier 1 -->
+            <div class="stack-tier">
+                <i class="fa-solid fa-mobile-screen-button tier-icon"></i>
+                <div class="tier-title">Client</div>
+                <div class="tech-pills">
+                    <div class="tech-pill">React Native</div>
+                    <div class="tech-pill">Next.js</div>
+                    <div class="tech-pill">WebSockets</div>
+                </div>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="stack-tier" style="border-color: rgba(255, 107, 53, 0.4); box-shadow: 0 0 30px rgba(255,107,53,0.1);">
+                <i class="fa-solid fa-server tier-icon" style="color: var(--accent-orange);"></i>
+                <div class="tier-title">Gateway</div>
+                <div class="tech-pills">
+                    <div class="tech-pill">GraphQL API</div>
+                    <div class="tech-pill">Node.js</div>
+                    <div class="tech-pill">Redis Cache</div>
+                </div>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="stack-tier">
+                <i class="fa-solid fa-database tier-icon"></i>
+                <div class="tier-title" style="color: #00F0FF;">Data Layer</div>
+                <div class="tech-pills">
+                    <div class="tech-pill">PostgreSQL</div>
+                    <div class="tech-pill">Elasticsearch</div>
+                    <div class="tech-pill">Kafka</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

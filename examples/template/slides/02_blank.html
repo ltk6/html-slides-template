@@ -1,0 +1,119 @@
+<!-- SLIDE 02: [SLIDE TITLE] — BLANK ANNOTATED TEMPLATE
+     ─────────────────────────────────────────────────────────────
+     INSTRUCTIONS FOR AI AGENTS:
+     1. Replace "slide-blank" with a unique snake_case name for this slide.
+     2. Replace "slide-N" in the id with the correct 0-based index (e.g. id="slide-2").
+     3. Update aria-label with the slide number and topic.
+     4. Add your <style> block inside this div — scope ALL rules with .slide-blank
+        (replace "slide-blank" with your chosen name) to avoid global leakage.
+     5. Build your layout inside <div class="content-wrapper">.
+     6. Register this file in slides.html's slideSources array.
+     ─────────────────────────────────────────────────────────────
+     SPEAKER NOTES (optional): Write your spoken notes here as a comment.
+     These are not rendered; they are for reference only.
+-->
+<div class="slide slide-blank" id="slide-2" aria-label="Slide N: Your Topic">
+    <style>
+        /* ── Scoped CSS: prefix EVERY rule with .slide-blank ── */
+        /* Example: a two-column layout */
+        .slide-blank .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            flex-grow: 1;
+            align-items: center;
+        }
+
+        /* Example: a card component */
+        .slide-blank .card {
+            background-color: var(--card-blue);
+            border: 1px solid var(--border-blue);
+            border-radius: 16px;
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .slide-blank .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-orange);
+        }
+
+        .slide-blank .card-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .slide-blank .card-title i {
+            color: var(--accent-orange);
+        }
+
+        .slide-blank .card-body {
+            font-size: 18px;
+            line-height: 1.55;
+            color: #E2E8F0;
+        }
+    </style>
+    <div class="content-wrapper">
+        <!--
+            ── TITLE ───────────────────────────────────────────────────
+            Use <h1 class="main-title"> for the slide heading.
+            It automatically gets an orange underline bar (360px wide).
+            Keep titles concise: 4–7 words max.
+        -->
+        <h1 class="main-title">Your Slide Title Here</h1>
+        <!--
+            ── CONTENT AREA ─────────────────────────────────────────────
+            Build your layout below. Common patterns:
+            A) Two-column grid (see .two-col above)
+            B) Three-column cards  → grid-template-columns: repeat(3, 1fr)
+            C) Bullet list         → <ul class="bullet-list">
+            D) Tier rows           → see SLIDE_GUIDE.md §Tier Container
+            E) Outcome box         → <div class="system-outcome-box"> at bottom
+        -->
+        <div class="two-col">
+            <!-- Left column -->
+            <div>
+                <!-- Optional orange section header -->
+                <div
+                    style="font-size: 28px; font-weight: 800; color: var(--accent-orange); margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Section A</span>
+                </div>
+                <ul class="bullet-list">
+                    <li><strong>First point:</strong> Explain it here.</li>
+                    <li><strong>Second point:</strong> Another key fact.</li>
+                    <li><strong>Third point:</strong> Supporting detail.</li>
+                </ul>
+            </div>
+            <!-- Right column: example card -->
+            <div class="card">
+                <div class="card-title">
+                    <i class="fa-solid fa-star"></i>
+                    <span>Card Title</span>
+                </div>
+                <p class="card-body">
+                    Describe what this card communicates in 2–3 sentences.
+                    Keep the tone direct and informative.
+                </p>
+            </div>
+        </div>
+        <!--
+            ── OUTCOME BOX (optional, always at bottom) ─────────────────
+            Use this to anchor a key takeaway or summary statement.
+            Place it as the last child of content-wrapper so margin-top: auto pushes it down.
+        -->
+        <div class="system-outcome-box">
+            <div class="outcome-label">Key Takeaway</div>
+            <div class="outcome-text">
+                One crisp, memorable sentence that summarizes this slide's main point.
+            </div>
+        </div>
+    </div>
+</div>
